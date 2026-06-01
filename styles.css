@@ -1846,11 +1846,11 @@ h1, h2, h3, h4, h5 {
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
-.footer-contact li:nth-child(2){
-   gap:0px;
+.footer-contact li:nth-child(1){
+   color:white;
 }
 .footer-contact li {
   display: flex;
