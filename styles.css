@@ -1849,16 +1849,13 @@ h1, h2, h3, h4, h5 {
   gap: 10px;
 }
 
-.footer-contact li:nth-child(1){
-   color:white;
-}
 .footer-contact li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   font-family: var(--font-body);
   font-size: 0.82rem;
-  color: rgba(235,229,220,0.68);
+  color: var(--color-cream-3);
   line-height: 1.55;
 }
 .fc-icon { color: var(--color-gold); font-size: 0.78rem; margin-top: 2px; flex-shrink: 0; }
