@@ -1849,11 +1849,6 @@ h1, h2, h3, h4, h5 {
   gap: 10px;
 }
 
-.footer-contact li:nth-child(1),
-.footer-contact li:nth-child(2),
-.footer-contact li:nth-child(3){
-   gap:0;
-}
 .footer-contact li {
   display: flex;
   align-items: flex-start;
