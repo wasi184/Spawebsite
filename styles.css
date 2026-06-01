@@ -1,5 +1,5 @@
 /* ================================================================
-   LUXURY SPA GULSHAN — PREMIUM ENHANCED STYLESHEET
+   LUXURY SPA GULSHAN — PREMIUM ENHANCED STYLESHEET.
    Upgraded: Smoother animations, richer depth, refined micro-interactions
    Fonts: Poppins (headings) + Inter (body)
    ================================================================ */
@@ -1849,6 +1849,9 @@ h1, h2, h3, h4, h5 {
   gap: 10px;
 }
 
+.footer-contact li:nth-child(2){
+   row-gap:0px;
+}
 .footer-contact li {
   display: flex;
   align-items: flex-start;
