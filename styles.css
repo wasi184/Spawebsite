@@ -2093,14 +2093,16 @@ border-radius: inherit;
    ================================================================ */
 @media (max-width: 550px){
     .price-pill{
-        width: 90px;
+        width: 78px;
         border-radius: 15px;
         text-align: center;
+        padding: 8px 0px;
     }
 }
 @media (min-width: 551px){
     .price-pill{
         border-radius: var(--radius-pill);
+        padding: 6px 12px;
     }
 }
 
@@ -2244,7 +2246,6 @@ border-radius: inherit;
 .price-pill {
   background: var(--color-cream-2);
   border: 1px solid rgba(180,138,78,0.25);
-  padding: 6px 12px;
   
   font-size: 0.78rem;
   font-weight: 600;
