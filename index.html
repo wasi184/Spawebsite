@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhaka Serenity Spa – Dhaka's most premium spa sanctuary. Expert therapists, private suites & elite body treatments in Gulshan-1.">
+  <title>Dhaka Serenity Spa – Elite Spa Sanctuary in Dhaka</title>
+
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE LOADER
+  ============================================================ -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-ring">
+        <svg class="loader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="36" stroke="#B48A4E" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="28" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="4 4"/>
+          <path d="M40 18 C28 18 20 28 20 40 C20 52 28 62 40 62 C52 62 60 52 60 40 C60 28 52 18 40 18Z" stroke="#B48A4E" stroke-width="1"/>
+          <circle cx="40" cy="40" r="6" fill="#B48A4E"/>
+          <line x1="40" y1="14" x2="40" y2="22" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="40" y1="58" x2="40" y2="66" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="14" y1="40" x2="22" y2="40" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="58" y1="40" x2="66" y2="40" stroke="#B48A4E" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <p class="loader-text">Dhaka Serenity Spa</p>
+      <p class="loader-subtext">Crafting your escape…</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="nav-logo" aria-label="Dhaka Serenity Spa Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+            <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.6" stroke-dasharray="3 3"/>
+            <path d="M28 12 C20 12 14 19 14 28 C14 37 20 44 28 44 C36 44 42 37 42 28 C42 19 36 12 28 12Z" fill="#F3EBE1"/>
+            <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.3"/>
+            <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            <circle cx="20" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="36" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="20" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+            <circle cx="36" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Dhaka Serenity</span>
+          <span class="logo-sub">Spa</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <span class="nav-pill-highlight" id="nav-pill"></span>
+        <a href="#hero"      class="nav-link" data-nav>Home</a>
+        <a href="pricing.html"   class="nav-link" data-nav>Pricing</a>
+        <a href="services.html"  class="nav-link" data-nav>Services</a>
+        <a href="about.html" class="nav-link" data-nav>About</a>
+      </nav>
+
+      <a href="book_now.html" class="btn btn-dark nav-cta">
+        <span>Book Now</span>
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="#hero"      class="mobile-link">Home</a>
+      <a href="pricing.html"   class="mobile-link">Pricing</a>
+      <a href="services.html"  class="mobile-link">Services</a>
+      <a href="about.html"     class="mobile-link">About</a>
+      <a href="book_now.html"   class="btn btn-dark mobile-cta">Book Now</a>
+    </div>
+  </header>
+
+
+  <!--============================================================
+       HERO SECTION
+============================================================ -->
+<section class="hero-section" style="will-change: transform;" id="hero">
+  <!-- Floating ambient orbs -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+  <div class="hero-container">
+
+    <!-- LEFT COLUMN -->
+    <div class="hero-text-col">
+
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot" id="badge-dot"></span>
+        <span class="badge-text">DHAKA SERENITY SPA</span>
+      </div>
+
+      <h1 class="hero-h1 reveal-up" style="--delay:0.1s">
+        Escape the City.<br>
+        Restore Your Soul in<br>
+        <span class="hero-h1-gradient">Dhaka's Finest Spa</span>
+      </h1>
+
+      <p class="hero-subtext reveal-up" style="--delay:0.2s">
+        Curated wellness rituals, Experienced female therapists, and private sanctuary rooms — designed to help you unwind, recharge, and experience exceptional well-being.
+      </p>
+
+      <div class="hero-btns reveal-up" style="--delay:0.3s">
+        <a href="#pricing" class="btn btn-dark btn-hero ripple-btn">
+          <span>Explore Packages</span>
+          <i class="fa-solid fa-tag"></i>
+        </a>
+        <a href="#services" class="btn btn-outline btn-hero">
+          <span>Our Treatments</span>
+          <i class="fa-solid fa-spa"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats reveal-up" style="--delay:0.4s">
+        <div class="stats-divider"></div>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">12+</span>
+            <span class="stat-label">Elite Treatments</span>
+          </div>
+          <div class="stats-sep"></div>
+          <div class="stat-item">
+            <span class="stat-number">5000+</span>
+            <span class="stat-label">Delighted Guests</span>
+          </div>
+          <div class="stats-sep"></div>
+          <div class="stat-item">
+            <span class="stat-number">11AM–9PM</span>
+            <span class="stat-label">Open Every Day</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN: Visual -->
+    <div class="hero-visual-col reveal-right">
+      <div class="hero-visual-inner">
+
+        <div class="hero-img-bg"></div>
+
+        <!-- IMAGE -->
+        <div class="hero-img-frame">
+          <img src="hero-spa.png" class="hero-img" alt="Luxury Spa Experience">
+        </div>
+
+        <!-- Floating Award Badge -->
+        <div class="floating-badge reveal-scale" id="floatingBadge" style="--delay:0.6s">
+          <div class="fb-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="fb-sparkle">
+              <path d="M20 4 L22.5 16 L34 12 L25 20 L34 28 L22.5 24 L20 36 L17.5 24 L6 28 L15 20 L6 12 L17.5 16 Z" fill="url(#goldGrad2)"/>
+              <defs>
+                <linearGradient id="goldGrad2" x1="0" y1="0" x2="40" y2="40">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#B48A4E"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="fb-content">
+            <span class="fb-title">Elite Recognition</span>
+            <span class="fb-subtitle">Dhaka's Finest Spa Experience</span>
+          </div>
+        </div>
+
+        <!-- Floating Rating Badge -->
+        <div class="floating-rating-badge reveal-scale" style="--delay:0.7s">
+          <div class="frb-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <span class="frb-text">3.8 · 14 Reviews</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div> 
+  <!-- SCROLL INDICATOR -->
+<div class="scroll-indicator">
+  <div class="scroll-track">
+    <div class="scroll-dot"></div>
+  </div>
+</div>
+</section> 
+        
+
+         
+
+
+  <!-- ============================================================
+       TABBED FILTER / ACCORDION
+  ============================================================ -->
+  <section class="accordion-section" id="packages">
+    <div class="section-container">
+
+      <div class="section-header center-text">
+        <span class="section-tag reveal-up">CURATED EXPERIENCES</span>
+        <h2 class="section-title reveal-up" style="--delay:0.1s">Signature Wellness Packages</h2>
+        <div class="section-divider reveal-up" style="--delay:0.15s"></div>
+        <p class="section-subtitle reveal-up" style="--delay:0.2s"><em>Each ritual is crafted to balance your body, calm your mind, and awaken your senses.</em></p>
+      </div>
+
+      <div class="tab-filter reveal-up" style="--delay:0.25s" role="tablist" aria-label="Service categories">
+        <button class="tab-btn active" data-tab="all"        role="tab" aria-selected="true">All Packages</button>
+        <button class="tab-btn"        data-tab="signature"  role="tab" aria-selected="false">Signature Therapies</button>
+        <button class="tab-btn"        data-tab="deep"       role="tab" aria-selected="false">Deep &amp; Intensive</button>
+        <button class="tab-btn"        data-tab="duo"        role="tab" aria-selected="false">Luxury Duo</button>
+      </div>
+
+     <!-- 01 -->
+      <div class="accordion-list reveal-up" style="--delay:0.3s" id="accordionList">
+<div class="accordion-item" data-category="all signature" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">01</span>
+    <span class="acc-title">Dry Massage <span class="acc-sub">— Traditional Healing Ritual</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">Rooted in ancient healing traditions, this oil-free massage targets pressure points and applies deep rhythmic stretching to dissolve chronic tension — no oils, just skilled hands and focused technique.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Increases flexibility & blood flow. Best for office stress.</p>
+  </div>
+</div>
+
+<!-- 02 -->
+<div class="accordion-item" data-category="all duo" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">02</span>
+    <span class="acc-title">Four Hand Massage <span class="acc-sub">— Synchronized Harmony</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">Two therapists move in perfect unison across your body, creating a seamless, almost meditative flow of touch. The mirrored movements trick the mind into deeper relaxation than a single therapist can achieve.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Deeply sedating. Ideal for anxiety & mental fatigue.</p>
+  </div>
+</div>
+
+<!-- 03 -->
+<div class="accordion-item" data-category="all deep" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">03</span>
+    <span class="acc-title">Deep Tissue Massage <span class="acc-sub">— Targeted Muscle Relief</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">Slow, deliberate strokes reach beneath the superficial muscles to break down adhesions and knots in the connective tissue. Designed for those carrying long-term muscular strain or recovering from physical overuse.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Relieves chronic pain & stiffness. Best post-workout recovery.</p>
+  </div>
+</div>
+
+<!-- 04 -->
+<div class="accordion-item" data-category="all signature" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">04</span>
+    <span class="acc-title">Sensual Massage <span class="acc-sub">— Awaken The Senses</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">A slow, exploratory full-body experience designed to heighten bodily awareness and dissolve inhibition. Gentle feather strokes and deliberate touch work together to awaken every nerve ending and restore sensory connection.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Restores mind-body connection. Perfect for deep personal unwinding.</p>
+  </div>
+</div>
+
+<!-- 05 -->
+<div class="accordion-item" data-category="all signature" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">05</span>
+    <span class="acc-title">Aroma Oil Massage <span class="acc-sub">— Relax &amp; Revive</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">Premium essential oils — chosen to match your mood and needs — are blended into long, flowing strokes that ease tension while their therapeutic scent calms the nervous system. Your skin drinks in nourishment as your mind exhales.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Nourishes skin & calms nerves. Great for sleep improvement.</p>
+  </div>
+</div>
+
+<!-- 06 -->
+<div class="accordion-item" data-category="all deep" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">06</span>
+    <span class="acc-title">Nuru Massage <span class="acc-sub">— Full Immersion Wellness</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">Originating in Japan, this full-body immersion technique uses a warm, ultra-slick nuru gel derived from seaweed. The frictionless gliding motions cover every muscle group for a profoundly deep release that conventional massage cannot replicate.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Full-body tension release. Unique sensory experience.</p>
+  </div>
+</div>
+
+<!-- 07 -->
+<div class="accordion-item" data-category="all signature" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">07</span>
+    <span class="acc-title">Body Scrub with Facial <span class="acc-sub">— Radiance &amp; Glow</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">A dual-action treatment that exfoliates the entire body with a fine mineral scrub to reveal fresh, luminous skin — then pairs it with a targeted facial cleanse and hydration ritual, leaving face and body glowing in unison.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Removes dead skin & brightens complexion. Ideal pre-event treatment.</p>
+  </div>
+</div>
+
+<!-- 08 -->
+<div class="accordion-item" data-category="all deep" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">08</span>
+    <span class="acc-title">Back &amp; Shoulder Massage <span class="acc-sub">— Instant Tension Release</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">A focused, high-impact session targeting the two areas that bear the most daily strain — the upper back and shoulder girdle. Therapists use firm kneading and cross-fiber friction to break up knots and restore range of motion fast.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Fast-acting knot relief. Perfect for desk workers & drivers.</p>
+  </div>
+</div>
+
+<!-- 09 -->
+<div class="accordion-item" data-category="all signature" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">09</span>
+    <span class="acc-title">Special Massage <span class="acc-sub">— Tailored Just For You</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">Your body, your rules. Our therapist consults with you before the session to build a fully bespoke treatment — drawing from our full range of techniques, pressures, and focus areas to match exactly what you need that day.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Fully personalized. No two sessions are the same.</p>
+  </div>
+</div>
+
+<!-- 10 -->
+<div class="accordion-item" data-category="all deep" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">10</span>
+    <span class="acc-title">Full Body Massage <span class="acc-sub">— Complete Harmony</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">A head-to-toe journey through every major muscle group, balancing relaxation strokes with therapeutic pressure to leave the whole body feeling unified and at ease. The definitive reset for a tired body and an overworked mind.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Total body reset. The ultimate stress & fatigue solution.</p>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="accordion-item" data-category="all duo" tabindex="0">
+  <div class="acc-left">
+    <span class="acc-number">11</span>
+    <span class="acc-title">Body to Body Massage <span class="acc-sub">— Ultimate Connection</span></span>
+  </div>
+  <span class="acc-icon"><i class="fa-solid fa-plus"></i></span>
+</div>
+<div class="accordion-content">
+  <div class="acc-content-inner">
+    <p class="acc-desc">An intimate full-body technique where the therapist uses their own body to apply continuous, flowing pressure — creating warmth and deep contact across every surface. The result is an unmatched sense of physical release and presence.</p>
+    <div class="acc-prices">
+      <span class="price-pill">60 min – 6,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">90 min – 9,000 Tk</span>
+      <span class="divider"></span>
+      <span class="price-pill">120 min – 11,000 Tk</span>
+    </div>
+    <p class="acc-benefit">Maximum physical release. Deeply immersive & restorative.</p>
+  </div>
+</div>
+
+      <div class="announcement-bar reveal-scale" style="--delay:0.35s">
+        <i class="fa-solid fa-fire-flame-curved ann-icon"></i>
+        Limited slots remaining —
+        <a href="book_now.html" class="ann-link">Reserve your session now →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE CARDS
+  ============================================================ -->
+  <section class="services-section" id="services">
+    <div class="section-container">
+
+      <div class="section-header left-text">
+        <span class="section-tag reveal-up">SIGNATURE TREATMENTS</span>
+        <h2 class="section-title reveal-up" style="--delay:0.1s">Most Requested Experiences</h2>
+        <p class="section-desc reveal-up" style="--delay:0.2s">Handcrafted for results — every session leaves you lighter, calmer, and completely renewed.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card A: Body Scrub with Facial -->
+        <div class="service-card reveal-up" style="--delay:0.25s">
+          <div class="card-img-wrap">
+            <img src="superman.png">
+            <span class="card-pill-label">✦ BESTSELLER</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Body Scrub with Facial</h3>
+            <p class="card-excerpt">Dhaka's climate takes a toll on your skin. Our Scrub + Facial ritual removes impurities, resurfaces texture, and infuses deep moisture — leaving you with a radiant, refreshed glow from head to face.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 120 min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-bangladeshi-taka-sign"></i> 15,000</span>
+            </div>
+            <a href="#" class="btn btn-outline-dark card-btn">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card B: Body to Body Massage -->
+        <div class="service-card reveal-up" style="--delay:0.35s">
+          <div class="card-img-wrap">
+            <img src="superman.png">
+            <span class="card-pill-label">✦ BESTSELLER</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Body to Body Massage</h3>
+            <p class="card-excerpt">Go beyond conventional massage. This full-immersion treatment targets every layer of tension in your body — delivering profound relaxation, restored circulation, and a sense of weightless calm.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-bangladeshi-taka-sign"></i> 9,000</span>
+            </div>
+            <a href="#" class="btn btn-outline-dark card-btn">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="services-cta-wrap reveal-up" style="--delay:0.45s">
+        <a href="#packages" class="btn btn-dark btn-wide ripple-btn">
+          <span>Browse All Treatments</span>
+          <i class="fa-solid fa-grid-2"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHY CHOOSE US + CTA BANNERS
+  ============================================================ -->
+  <section class="why-section" id="about">
+    <div class="section-container">
+
+      <div class="section-header left-text">
+        <span class="section-tag reveal-up">THE DIFFERENCE</span>
+        <h2 class="section-title reveal-up" style="--delay:0.1s">Why Dhaka's Discerning Guests Choose Us</h2>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card reveal-up" style="--delay:0.15s">
+          <div class="feature-icon-wrap feature-icon-pink">
+            <i class="fa-solid fa-location-dot feature-icon"></i>
+          </div>
+         <h4 class="feature-title">Multiple Prime Locations</h4>
+<p class="feature-body">With branches in Gulshan and Mirpur, we bring convenience closer to you across Dhaka.</p>
+        </div>
+
+        <div class="feature-card reveal-up" style="--delay:0.25s">
+          <div class="feature-icon-wrap feature-icon-blue">
+            <i class="fa-solid fa-shield-halved feature-icon"></i>
+          </div>
+          <h4 class="feature-title">Exclusive Private Suites</h4>
+          <p class="feature-body">Every session takes place in a dedicated private suite — designed for complete discretion and total comfort.</p>
+        </div>
+
+        <div class="feature-card reveal-up" style="--delay:0.35s">
+          <div class="feature-icon-wrap feature-icon-orange">
+            <i class="fa-solid fa-user-tie feature-icon"></i>
+          </div>
+          <h4 class="feature-title">Experienced Female Therapists</h4>
+          <p class="feature-body">Our certified therapists bring years of expertise in advanced wellness techniques — your results are always exceptional.</p>
+        </div>
+
+        <div class="feature-card reveal-up" style="--delay:0.45s">
+          <div class="feature-icon-wrap feature-icon-yellow">
+            <i class="fa-solid fa-seedling feature-icon"></i>
+          </div>
+          <h4 class="feature-title">Premium Natural Oils</h4>
+          <p class="feature-body">Only the finest botanical oils and skin-safe products touch your skin — pure, effective, and deeply nourishing.</p>
+        </div>
+
+      </div>
+
+      <!-- Pricing CTA Banner -->
+      <div class="cta-banner cta-banner-light reveal-up" style="--delay:0.2s" id="pricing">
+        <div class="cta-banner-text">
+          <h3 class="cta-banner-title">Honest, Transparent Pricing</h3>
+          <p class="cta-banner-desc">Every package, every duration, every service — clearly listed with zero hidden costs. Book with full confidence.</p>
+        </div>
+        <a href="#packages" class="btn btn-dark ripple-btn">
+          <span>View All Pricing</span>
+          <i class="fa-solid fa-list-check"></i>
+        </a>
+      </div>
+
+      <!-- Contact / Booking Banner -->
+      <div class="cta-banner cta-banner-dark reveal-up" style="--delay:0.3s" id="contact">
+        <div class="cta-banner-text">
+          <h3 class="cta-banner-title cta-title-white">Ready to Begin Your Ritual?</h3>
+          <p class="cta-banner-desc cta-desc-gold">Reach out directly — our team will confirm availability and guide you to the perfect treatment for your needs.</p>
+        </div>
+        <a href="tel:+8801660139118" class="btn btn-ghost-white ripple-btn">
+          <span>Call Us Now</span>
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       LOCATION & CONTACT
+  ============================================================ -->
+  <section class="location-section" id="location">
+    <div class="section-container">
+
+      <div class="location-grid">
+
+        <!-- Left Info Card -->
+        <div class="loc-card loc-info-card reveal-up">
+          <span class="section-tag loc-tag">● FIND OUR SANCTUARY</span>
+          <h2 class="loc-title">Find Your Nearest Branch</h2>
+          <p class="loc-body">Find us in Gulshan and Mirpur, where comfort and serenity await. Select your preferred location and visit us today.</p>
+
+<div class="loc-address-box loc-location active"
+     data-map="https://maps.google.com/maps?q=23.7956136,90.3536549&t=&z=15&ie=UTF8&iwloc=&output=embed"
+     data-direction="https://www.google.com/maps/dir/?api=1&destination=23.7956136,90.3536549">
+  <i class="fa-solid fa-map-pin loc-pin"></i>
+  <div>
+    <p class="loc-addr-line1">Mirpur 1, Mukto Bangla Shopping Complex</p>
+    <p class="loc-addr-line2">Dhaka, Bangladesh</p>
+  </div>
+</div>
+        <div class="loc-address-box loc-location"
+     data-map="https://maps.google.com/maps?q=23.7875442,90.4160099&t=&z=15&ie=UTF8&iwloc=&output=embed"
+     data-direction="https://www.google.com/maps/dir/?api=1&destination=23.7875442,90.4160099">
+  <i class="fa-solid fa-map-pin loc-pin"></i>
+  <div>
+    <p class="loc-addr-line1">Gulshan-2, UCB Bank</p>
+    <p class="loc-addr-line2">Dhaka 1212, Bangladesh</p>
+  </div>
+</div>
+
+
+          <div class="loc-hours-box">
+            <i class="fa-regular fa-clock loc-clock"></i>
+            <div>
+              <p class="loc-addr-line1">Open Every Day</p>
+              <p class="loc-addr-line2">Saturday – Friday · 11:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+
+          <div class="loc-actions">
+            <a id="directionBtn"
+              href="https://www.google.com/maps/dir//Dhaka+Serenity+Spa,+80+Road+No.+11,+Dhaka+1213/@23.7908285,90.4091438,18z/data=!4m16!1m7!3m6!1s0x3755c6e06955e091:0x7b11ff58e26d205c!2sDhaka+Serenity+Spa!8m2!3d23.7902726!4d90.4094053!16s%2Fg%2F11b8v9kmqh!4m7!1m0!1m5!1m1!1s0x3755c6e06955e091:0x7b11ff58e26d205c!2m2!1d90.4094104!2d23.7903087?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-dark ripple-btn loc-btn"
+              target="_blank"
+              class="btn btn-dark ripple-btn loc-btn">
+             <span>Get Directions</span>
+              <i class="fa-solid fa-diamond-turn-right"></i>
+            </a>
+            <a href="https://maps.google.com/" target="_blank" class="loc-glink">
+              View Google Profile
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Map Card -->
+       <div class="loc-card loc-map-card reveal-right">
+<iframe
+  id="mapFrame"
+  title="Location map"
+  src="https://maps.google.com/maps?q=23.7956136,90.3536549&output=embed"
+  width="100%"
+  height="100%"
+  style="border:0; border-radius: 20px;"
+  allowfullscreen=""
+  loading="lazy">
+</iframe>
+</div>      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo-svg">
+              <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+              <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.4"/>
+              <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            </svg>
+            <span class="footer-brand-name">Dhaka Serenity Spa</span>
+          </div>
+          <p class="footer-brand-desc">Dhaka's elite spa sanctuary — where skilled hands, pure ingredients, and private spaces converge for your total transformation.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">QUICK LINKS</h5>
+          <ul class="footer-links">
+            <li><a href="#hero"     class="footer-link">Home</a></li>
+            <li><a href="#services" class="footer-link">Our Treatments</a></li>
+            <li><a href="#pricing"  class="footer-link">Pricing</a></li>
+            <li><a href="#about"    class="footer-link">About Us</a></li>
+            <li><a href="#blog"     class="footer-link">Blog</a></li>
+            <li><a href="#contact"  class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">OUR SERVICES</h5>
+          <ul class="footer-links">
+            <li><a href="#packages" class="footer-link">Aroma Oil Massage</a></li>
+            <li><a href="#packages" class="footer-link">Deep Tissue Massage</a></li>
+            <li><a href="#packages" class="footer-link">Full Body Massage</a></li>
+            <li><a href="#packages" class="footer-link">Four Hand Massage</a></li>
+            <li><a href="#packages" class="footer-link">Thai Massage</a></li>
+            <li><a href="#packages" class="footer-link">Nuru Massage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">CONTACT US</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Mirpur 1, Mukto Bangla Shopping Complex</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1216, Bangladesh</li>
+            <li><i class="fa-solid fa-location-dot fc-icon"></i>Gulshan-2, UCB Bank</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1212, Bangladesh</li>
+            <li><i class="fa-solid fa-phone fc-icon"></i> +8801660139118</li>
+            <li><i class="fa-solid fa-envelope fc-icon"></i>
+              <a href="mailto:dhakaserenityspa43@gmail.com" class="footer-link footer-email">dhakaserenityspa43@gmail.com</a>
+            </li>
+            <li><i class="fa-regular fa-clock fc-icon"></i> Sat – Fri · 11 AM – 9 PM</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-divider"></div>
+      <div class="footer-sub">
+        <span class="footer-copy">© 2026 Dhaka Serenity Spa. All rights reserved.</span>
+        <a href="#" class="footer-link footer-privacy">Privacy Policy</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       CHAT WIDGET
+  ============================================================ -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-stack" id="chatStack">
+      <a href="tel:+8801660139118" class="chat-token chat-call" title="Call Now" aria-label="Call us directly">
+        <i class="fa-solid fa-phone-volume"></i>
+      </a>
+      <a href="https://wa.me/8801660139118" class="chat-token chat-whatsapp" title="WhatsApp" aria-label="Chat on WhatsApp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+        <div class="chat-pill" id="chatPill" role="button" tabindex="0" aria-expanded="false" aria-label="Open contact options">
+      <span class="chat-pill-text">Let's Talk</span>
+      <div class="chat-pill-avatar">
+       <i class="fa-solid fa-comment-dots chat-avatar-icon"></i>
+      </div>
+    </div>
+ 
+
+        <div class="chat-close" id="chatClose" role="button" tabindex="0" aria-label="Close contact menu">
+      <i class="fa-solid fa-xmark chat-x"></i>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
