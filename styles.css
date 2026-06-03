@@ -77,13 +77,13 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 body {
   font-family: var(--font-body);
   background-color: var(--color-cream);
   color: var(--color-text-main);
   line-height: 1.65;
-  overflow-x: hidden;
 }
 a, button, [role="button"], [tabindex="0"] { cursor: pointer; }
 img, svg { display: block; max-width: 100%; }
