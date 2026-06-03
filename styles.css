@@ -1530,9 +1530,8 @@ border-radius: inherit;
 
 .feature-icon-wrap {
   width: 58px; height: 58px;
-  border-radius: 18px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  border-radius: 25%;
+  overflow:hidden;
   transition: transform 0.4s var(--ease-spring);
 }
 .feature-card:hover .feature-icon-wrap { transform: scale(1.15) rotate(5deg); }
