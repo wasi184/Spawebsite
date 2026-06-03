@@ -243,7 +243,7 @@ function initTabFilter() {
       item.style.opacity    = '0';
       item.style.transform  = 'translateX(8px)';
 
-      setTimeout(() => {
+      
         item.classList.add('hidden');
         if (content && content.classList.contains('accordion-content')) {
           content.classList.add('hidden');
@@ -256,7 +256,7 @@ function initTabFilter() {
         item.style.opacity    = '';
         item.style.transform  = '';
         item.style.transition = '';
-      }, 250);
+      
     }
   });
 };
