@@ -1,13 +1,773 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
-  <link rel="stylesheet" href="services.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhaka Serenity Spa – Explore our 12 signature wellness treatments. Premium spa services in Dhaka's most elite sanctuary.">
+  <title>Our Services – Dhaka Serenity Spa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="services.css" />
 </head>
 <body>
-    <h1>Here are our services:</h1>
+
+  <!-- ============================================================
+       PAGE LOADER
+  ============================================================ -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-ring">
+        <svg class="loader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="36" stroke="#B48A4E" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="28" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="4 4"/>
+          <path d="M40 18 C28 18 20 28 20 40 C20 52 28 62 40 62 C52 62 60 52 60 40 C60 28 52 18 40 18Z" stroke="#B48A4E" stroke-width="1"/>
+          <circle cx="40" cy="40" r="6" fill="#B48A4E"/>
+          <line x1="40" y1="14" x2="40" y2="22" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="40" y1="58" x2="40" y2="66" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="14" y1="40" x2="22" y2="40" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="58" y1="40" x2="66" y2="40" stroke="#B48A4E" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <p class="loader-text">Dhaka Serenity Spa</p>
+      <p class="loader-subtext">Preparing your treatments…</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="nav-logo" aria-label="Dhaka Serenity Spa Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+            <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.6" stroke-dasharray="3 3"/>
+            <path d="M28 12 C20 12 14 19 14 28 C14 37 20 44 28 44 C36 44 42 37 42 28 C42 19 36 12 28 12Z" fill="#F3EBE1"/>
+            <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.3"/>
+            <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            <circle cx="20" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="36" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="20" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+            <circle cx="36" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Dhaka Serenity</span>
+          <span class="logo-sub">Spa</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <span class="nav-pill-highlight" id="nav-pill"></span>
+        <a href="index.html"    class="nav-link" data-nav>Home</a>
+        <a href="services.html" class="nav-link active" data-nav>Services</a>
+        <a href="about.html"    class="nav-link" data-nav>About</a>
+        <a href="index.html#location" class="nav-link" data-nav>Locations</a>
+      </nav>
+
+      <a href="book_now.html" class="btn btn-dark nav-cta">
+        <span>Book Now</span>
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="index.html"    class="mobile-link">Home</a>
+      <a href="services.html" class="mobile-link">Services</a>
+      <a href="about.html"    class="mobile-link">About</a>
+      <a href="book_now.html" class="btn btn-dark mobile-cta">Book Now</a>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       SERVICES HERO
+  ============================================================ -->
+  <section class="svc-hero" id="svc-hero">
+    <div class="svc-hero-orb svc-orb-1" aria-hidden="true"></div>
+    <div class="svc-hero-orb svc-orb-2" aria-hidden="true"></div>
+    <div class="svc-hero-orb svc-orb-3" aria-hidden="true"></div>
+
+    <div class="svc-hero-inner">
+
+      <div class="svc-hero-badge reveal-up">
+        <span class="badge-dot" id="svc-badge-dot"></span>
+        <span class="badge-text">DHAKA SERENITY SPA</span>
+      </div>
+
+      <h1 class="svc-hero-h1 reveal-up" style="--delay:0.1s">
+        Our Signature<br>
+        <span class="hero-h1-gradient">Services</span>
+      </h1>
+
+      <div class="svc-hero-divider reveal-up" style="--delay:0.18s">
+        <div class="svc-divider-line svc-divider-left"></div>
+        <div class="svc-divider-gem">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="#B48A4E"/>
+          </svg>
+        </div>
+        <div class="svc-divider-line svc-divider-right"></div>
+      </div>
+
+      <p class="svc-hero-sub reveal-up" style="--delay:0.25s">
+        Twelve meticulously crafted treatments, each designed to restore balance, awaken the senses, and deliver an unrivalled experience of luxury wellness.
+      </p>
+
+      <div class="svc-hero-pills reveal-up" style="--delay:0.32s">
+        <span class="svc-hero-pill"><i class="fa-solid fa-spa"></i> 12 Elite Treatments</span>
+        <span class="svc-hero-pill"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+        <span class="svc-hero-pill"><i class="fa-solid fa-location-dot"></i> Gulshan &amp; Mirpur</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES GRID — 12 CARDS
+  ============================================================ -->
+  <section class="svc-cards-section" id="svc-cards">
+    <div class="section-container">
+
+      <div class="section-header center-text">
+        <span class="section-tag reveal-up">● ALL TREATMENTS</span>
+        <h2 class="section-title reveal-up" style="--delay:0.1s">Choose Your Ritual</h2>
+        <div class="section-divider reveal-up" style="--delay:0.15s"></div>
+        <p class="section-subtitle reveal-up" style="--delay:0.2s">Every session is performed by experienced therapists in our private, serene treatment suites.</p>
+      </div>
+
+      <div class="svc-cards-grid">
+
+        <!-- CARD 01: Aroma Oil Massage -->
+        <article class="service-card reveal-up" style="--delay:0.05s" data-service="0" tabindex="0" role="button" aria-label="View Aroma Oil Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-aroma">
+              <div class="svc-visual-aroma">
+                <div class="sva-bottle"></div>
+                <div class="sva-drops">
+                  <span class="sva-drop sva-d1"></span>
+                  <span class="sva-drop sva-d2"></span>
+                  <span class="sva-drop sva-d3"></span>
+                </div>
+                <div class="sva-glow"></div>
+                <div class="sva-petals">
+                  <span class="sva-petal sva-p1"></span>
+                  <span class="sva-petal sva-p2"></span>
+                  <span class="sva-petal sva-p3"></span>
+                  <span class="sva-petal sva-p4"></span>
+                </div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ BESTSELLER</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Aroma Oil Massage</h3>
+            <p class="card-excerpt">Premium essential oils blended into long, flowing strokes that ease tension while their therapeutic scent calms the nervous system. Your skin drinks in nourishment as your mind exhales.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="0">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 02: Deep Tissue Massage -->
+        <article class="service-card reveal-up" style="--delay:0.1s" data-service="1" tabindex="0" role="button" aria-label="View Deep Tissue Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-deep">
+              <div class="svc-visual-deep">
+                <div class="svd-body"></div>
+                <div class="svd-hands">
+                  <span class="svd-hand svd-h1"></span>
+                  <span class="svd-hand svd-h2"></span>
+                </div>
+                <div class="svd-lines">
+                  <span class="svd-line svd-l1"></span>
+                  <span class="svd-line svd-l2"></span>
+                  <span class="svd-line svd-l3"></span>
+                </div>
+                <div class="cv-shimmer"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ THERAPEUTIC</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Deep Tissue Massage</h3>
+            <p class="card-excerpt">Slow, deliberate strokes reach beneath superficial muscles to break down adhesions and knots in connective tissue. Designed for long-term muscular strain or post-physical overuse recovery.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="1">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 03: Full Body Massage -->
+        <article class="service-card reveal-up" style="--delay:0.15s" data-service="2" tabindex="0" role="button" aria-label="View Full Body Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-full">
+              <div class="svc-visual-full">
+                <div class="svf-silhouette"></div>
+                <div class="svf-ring svf-r1"></div>
+                <div class="svf-ring svf-r2"></div>
+                <div class="svf-orb"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ COMPLETE RESET</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Full Body Massage</h3>
+            <p class="card-excerpt">A head-to-toe journey through every major muscle group, balancing relaxation strokes with therapeutic pressure. The definitive reset for a tired body and an overworked mind.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="2">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 04: Four Hand Massage -->
+        <article class="service-card reveal-up" style="--delay:0.2s" data-service="3" tabindex="0" role="button" aria-label="View Four Hand Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-fourhand">
+              <div class="svc-visual-fourhand">
+                <div class="sv4-center"></div>
+                <div class="sv4-pair sv4-top">
+                  <span class="sv4-hand sv4-tl"></span>
+                  <span class="sv4-hand sv4-tr"></span>
+                </div>
+                <div class="sv4-pair sv4-bot">
+                  <span class="sv4-hand sv4-bl"></span>
+                  <span class="sv4-hand sv4-br"></span>
+                </div>
+                <div class="sv4-glow"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ LUXURY DUO</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Four Hand Massage</h3>
+            <p class="card-excerpt">Two therapists move in perfect unison across your body, creating a seamless, meditative flow of touch. Mirrored movements trick the mind into deeper relaxation than a single therapist can achieve.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="3">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 05: Thai Massage -->
+        <article class="service-card reveal-up" style="--delay:0.25s" data-service="4" tabindex="0" role="button" aria-label="View Thai Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-thai">
+              <div class="svc-visual-thai">
+                <div class="svt-lotus">
+                  <span class="svt-petal svt-p1"></span>
+                  <span class="svt-petal svt-p2"></span>
+                  <span class="svt-petal svt-p3"></span>
+                  <span class="svt-petal svt-p4"></span>
+                  <span class="svt-petal svt-p5"></span>
+                  <span class="svt-petal svt-p6"></span>
+                </div>
+                <div class="svt-core"></div>
+                <div class="svt-glow"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ ANCIENT RITUAL</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Thai Massage</h3>
+            <p class="card-excerpt">Rooted in centuries of tradition, Thai massage combines passive yoga stretches, rhythmic compression, and acupressure to unlock energy lines, restore flexibility, and deliver profound whole-body renewal.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="4">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 06: Nuru Massage -->
+        <article class="service-card reveal-up" style="--delay:0.3s" data-service="5" tabindex="0" role="button" aria-label="View Nuru Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-nuru">
+              <div class="svc-visual-nuru">
+                <div class="svn-wave svn-w1"></div>
+                <div class="svn-wave svn-w2"></div>
+                <div class="svn-wave svn-w3"></div>
+                <div class="svn-pearl"></div>
+                <div class="svn-shimmer"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ JAPANESE ORIGIN</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Nuru Massage</h3>
+            <p class="card-excerpt">Originating in Japan, this full-body immersion technique uses warm nuru gel derived from seaweed. The frictionless gliding motions cover every muscle group for a profoundly deep release.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="5">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 07: Dry Massage -->
+        <article class="service-card reveal-up" style="--delay:0.05s" data-service="6" tabindex="0" role="button" aria-label="View Dry Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-dry">
+              <div class="svc-visual-dry">
+                <div class="svdr-stone svdr-s1"></div>
+                <div class="svdr-stone svdr-s2"></div>
+                <div class="svdr-stone svdr-s3"></div>
+                <div class="svdr-press"></div>
+                <div class="svdr-glow"></div>
+                <div class="svdr-rings">
+                  <span class="svdr-ring svdr-r1"></span>
+                  <span class="svdr-ring svdr-r2"></span>
+                </div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ TRADITIONAL</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Dry Massage</h3>
+            <p class="card-excerpt card-excerpt-sub"><em>Traditional Healing Ritual</em> — Rooted in ancient healing traditions, this oil-free massage targets pressure points and applies deep rhythmic stretching to dissolve chronic tension.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="6">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 08: Sensual Massage -->
+        <article class="service-card reveal-up" style="--delay:0.1s" data-service="7" tabindex="0" role="button" aria-label="View Sensual Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-sensual">
+              <div class="svc-visual-sensual">
+                <div class="svs-core"></div>
+                <div class="svs-feather svs-f1"></div>
+                <div class="svs-feather svs-f2"></div>
+                <div class="svs-particles">
+                  <span class="svs-pt svs-pt1"></span>
+                  <span class="svs-pt svs-pt2"></span>
+                  <span class="svs-pt svs-pt3"></span>
+                  <span class="svs-pt svs-pt4"></span>
+                  <span class="svs-pt svs-pt5"></span>
+                </div>
+                <div class="svs-glow"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ SIGNATURE</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Sensual Massage</h3>
+            <p class="card-excerpt card-excerpt-sub"><em>Awaken The Senses</em> — A slow, exploratory full-body experience designed to heighten bodily awareness and dissolve inhibition. Gentle feather strokes awaken every nerve ending.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="7">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 09: Body Scrub with Facial -->
+        <article class="service-card reveal-up" style="--delay:0.15s" data-service="8" tabindex="0" role="button" aria-label="View Body Scrub with Facial details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-scrub">
+              <div class="svc-visual-scrub">
+                <div class="svsc-face">
+                  <div class="svsc-face-glow"></div>
+                  <div class="svsc-sparkle svsc-sp1"></div>
+                  <div class="svsc-sparkle svsc-sp2"></div>
+                  <div class="svsc-sparkle svsc-sp3"></div>
+                </div>
+                <div class="svsc-petals">
+                  <span class="svsc-p svsc-p1"></span>
+                  <span class="svsc-p svsc-p2"></span>
+                  <span class="svsc-p svsc-p3"></span>
+                </div>
+                <div class="svsc-rays">
+                  <span class="svsc-ray svsc-r1"></span>
+                  <span class="svsc-ray svsc-r2"></span>
+                  <span class="svsc-ray svsc-r3"></span>
+                  <span class="svsc-ray svsc-r4"></span>
+                </div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ RADIANCE GLOW</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Body Scrub with Facial</h3>
+            <p class="card-excerpt card-excerpt-sub"><em>Radiance &amp; Glow</em> — A dual-action treatment that exfoliates the entire body with a fine mineral scrub, then pairs it with a targeted facial cleanse and hydration ritual.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="8">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 10: Back & Shoulder Massage -->
+        <article class="service-card reveal-up" style="--delay:0.2s" data-service="9" tabindex="0" role="button" aria-label="View Back and Shoulder Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-back">
+              <div class="svc-visual-back">
+                <div class="svb-torso"></div>
+                <div class="svb-shoulder svb-sl"></div>
+                <div class="svb-shoulder svb-sr"></div>
+                <div class="svb-pressure svb-p1"></div>
+                <div class="svb-pressure svb-p2"></div>
+                <div class="svb-pressure svb-p3"></div>
+                <div class="svb-glow"></div>
+                <div class="cv-shimmer"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ TENSION RELIEF</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Back &amp; Shoulder Massage</h3>
+            <p class="card-excerpt card-excerpt-sub"><em>Instant Tension Release</em> — A focused session targeting the areas that bear the most daily strain. Firm kneading and cross-fiber friction break up knots and restore range of motion fast.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="9">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 11: Special Massage -->
+        <article class="service-card reveal-up" style="--delay:0.25s" data-service="10" tabindex="0" role="button" aria-label="View Special Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-special">
+              <div class="svc-visual-special">
+                <div class="svsp-star svsp-s1"></div>
+                <div class="svsp-star svsp-s2"></div>
+                <div class="svsp-star svsp-s3"></div>
+                <div class="svsp-center">
+                  <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="svsp-icon">
+                    <path d="M30 6 L34 22 L50 18 L38 28 L50 38 L34 34 L30 50 L26 34 L10 38 L22 28 L10 18 L26 22 Z" fill="url(#svspGold)"/>
+                    <defs>
+                      <linearGradient id="svspGold" x1="0" y1="0" x2="60" y2="60">
+                        <stop offset="0%" stop-color="#FFD700"/>
+                        <stop offset="100%" stop-color="#B48A4E"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="svsp-glow"></div>
+                <div class="svsp-orbit svsp-o1"></div>
+                <div class="svsp-orbit svsp-o2"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ BESPOKE</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Special Massage</h3>
+            <p class="card-excerpt card-excerpt-sub"><em>Tailored Just For You</em> — Your body, your rules. Our therapist consults with you to build a fully bespoke treatment — drawing from our full range of techniques, pressures, and focus areas.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="10">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- CARD 12: Body to Body Massage -->
+        <article class="service-card reveal-up" style="--delay:0.3s" data-service="11" tabindex="0" role="button" aria-label="View Body to Body Massage details">
+          <div class="card-img-wrap">
+            <div class="card-img svc-img-b2b">
+              <div class="svc-visual-b2b">
+                <div class="svb2-wave svb2-w1"></div>
+                <div class="svb2-wave svb2-w2"></div>
+                <div class="svb2-center">
+                  <div class="svb2-heart">
+                    <div class="svb2-pulse svb2-pulse1"></div>
+                    <div class="svb2-pulse svb2-pulse2"></div>
+                  </div>
+                </div>
+                <div class="svb2-shimmer"></div>
+              </div>
+              <div class="card-img-overlay"></div>
+            </div>
+            <span class="card-pill-label">✦ ULTIMATE</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Body to Body Massage</h3>
+            <p class="card-excerpt card-excerpt-sub"><em>Ultimate Connection</em> — An immersive full-body experience that forges a profound connection between therapist and guest. Warm, all-encompassing contact dissolves every boundary of stress and tension.</p>
+            <div class="card-meta">
+              <span class="card-meta-item"><i class="fa-regular fa-clock"></i> 60 – 120 Min</span>
+              <span class="card-meta-item card-price"><i class="fa-solid fa-tag"></i> From 6,000 Tk</span>
+            </div>
+            <button class="btn btn-outline-dark svc-card-btn" data-service="11">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </button>
+          </div>
+        </article>
+
+      </div><!-- /svc-cards-grid -->
+
+      <!-- CTA ROW -->
+      <div class="svc-bottom-cta reveal-up" style="--delay:0.1s">
+        <a href="book_now.html" class="btn btn-dark btn-wide ripple-btn">
+          <span>Book Any Treatment</span>
+          <i class="fa-solid fa-spa btn-icon"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICE DETAIL MODAL
+  ============================================================ -->
+  <div class="svc-modal-overlay" id="svcModalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+    <div class="svc-modal" id="svcModal">
+      <button class="svc-modal-close" id="svcModalClose" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="svc-modal-img-wrap">
+        <div class="svc-modal-img" id="svcModalImg"></div>
+        <div class="svc-modal-img-overlay"></div>
+        <span class="svc-modal-badge" id="svcModalBadge"></span>
+      </div>
+
+      <div class="svc-modal-body">
+        <span class="section-tag svc-modal-tag" id="svcModalTag"></span>
+        <h2 class="svc-modal-title" id="svcModalTitle"></h2>
+        <div class="svc-modal-divider"></div>
+        <p class="svc-modal-desc" id="svcModalDesc"></p>
+
+        <div class="svc-modal-meta">
+          <div class="svc-modal-meta-item">
+            <i class="fa-regular fa-clock svc-modal-meta-icon"></i>
+            <div>
+              <span class="svc-modal-meta-label">Duration</span>
+              <span class="svc-modal-meta-val" id="svcModalDuration"></span>
+            </div>
+          </div>
+          <div class="svc-modal-meta-sep"></div>
+          <div class="svc-modal-meta-item">
+            <i class="fa-solid fa-tag svc-modal-meta-icon"></i>
+            <div>
+              <span class="svc-modal-meta-label">Investment</span>
+              <span class="svc-modal-meta-val" id="svcModalPrice"></span>
+            </div>
+          </div>
+          <div class="svc-modal-meta-sep"></div>
+          <div class="svc-modal-meta-item">
+            <i class="fa-solid fa-location-dot svc-modal-meta-icon"></i>
+            <div>
+              <span class="svc-modal-meta-label">Available At</span>
+              <span class="svc-modal-meta-val">Gulshan &amp; Mirpur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-modal-benefit" id="svcModalBenefit"></div>
+
+        <div class="svc-modal-prices" id="svcModalPrices"></div>
+
+        <div class="svc-modal-actions">
+          <a href="book_now.html" class="btn btn-dark ripple-btn">
+            <span>Book This Treatment</span>
+            <i class="fa-solid fa-arrow-right btn-icon"></i>
+          </a>
+          <a href="tel:+8801660139118" class="btn btn-outline">
+            <span>Call to Book</span>
+            <i class="fa-solid fa-phone btn-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       CTA BANNER
+  ============================================================ -->
+  <section class="svc-cta-section">
+    <div class="section-container">
+      <div class="svc-cta-banner reveal-up">
+        <div class="svc-cta-orb-1" aria-hidden="true"></div>
+        <div class="svc-cta-orb-2" aria-hidden="true"></div>
+        <div class="svc-cta-content">
+          <span class="section-tag svc-cta-tag">● READY TO UNWIND?</span>
+          <h2 class="svc-cta-title">Your Sanctuary Awaits</h2>
+          <p class="svc-cta-sub">Reserve your treatment today and let our expert therapists restore your mind, body, and soul.</p>
+          <div class="svc-cta-btns">
+            <a href="book_now.html" class="btn btn-dark btn-wide ripple-btn">
+              <span>Reserve Your Session</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+            <a href="https://wa.me/8801660139118" target="_blank" class="btn btn-ghost-white btn-wide">
+              <span>WhatsApp Us</span>
+              <i class="fa-brands fa-whatsapp btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo-svg">
+              <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+              <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.4"/>
+              <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            </svg>
+            <span class="footer-brand-name">Dhaka Serenity Spa</span>
+          </div>
+          <p class="footer-brand-desc">Dhaka's elite spa sanctuary — where skilled hands, pure ingredients, and private spaces converge for your total transformation.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">QUICK LINKS</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"      class="footer-link">Home</a></li>
+            <li><a href="services.html"   class="footer-link">Our Services</a></li>
+            <li><a href="about.html"      class="footer-link">About Us</a></li>
+            <li><a href="book_now.html"   class="footer-link">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">OUR SERVICES</h5>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Aroma Oil Massage</a></li>
+            <li><a href="services.html" class="footer-link">Deep Tissue Massage</a></li>
+            <li><a href="services.html" class="footer-link">Full Body Massage</a></li>
+            <li><a href="services.html" class="footer-link">Four Hand Massage</a></li>
+            <li><a href="services.html" class="footer-link">Thai Massage</a></li>
+            <li><a href="services.html" class="footer-link">Nuru Massage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">CONTACT US</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Mirpur 1, Mukto Bangla Shopping Complex</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1216, Bangladesh</li>
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Gulshan-2, UCB Bank</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1212, Bangladesh</li>
+            <li><i class="fa-solid fa-phone fc-icon"></i> +8801660139118</li>
+            <li><i class="fa-solid fa-envelope fc-icon"></i>
+              <a href="mailto:dhakaserenityspa43@gmail.com" class="footer-link footer-email">dhakaserenityspa43@gmail.com</a>
+            </li>
+            <li><i class="fa-regular fa-clock fc-icon"></i> Sat – Fri · 11 AM – 9 PM</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-divider"></div>
+      <div class="footer-sub">
+        <span class="footer-copy">© 2026 Dhaka Serenity Spa. All rights reserved.</span>
+        <a href="#" class="footer-link footer-privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       CHAT WIDGET
+  ============================================================ -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-stack" id="chatStack">
+      <a href="tel:+8801660139118" class="chat-token chat-call" title="Call Now" aria-label="Call us directly">
+        <i class="fa-solid fa-phone-volume"></i>
+      </a>
+      <a href="https://wa.me/8801660139118" class="chat-token chat-whatsapp" title="WhatsApp" aria-label="Chat on WhatsApp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+    <div class="chat-pill" id="chatPill" role="button" tabindex="0" aria-expanded="false" aria-label="Open contact options">
+      <span class="chat-pill-text">Let's Talk</span>
+      <div class="chat-pill-avatar">
+        <i class="fa-solid fa-comment-dots chat-avatar-icon"></i>
+      </div>
+    </div>
+    <div class="chat-close" id="chatClose" role="button" tabindex="0" aria-label="Close contact menu">
+      <i class="fa-solid fa-xmark chat-x"></i>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
   <script src="services.js"></script>
 </body>
 </html>
