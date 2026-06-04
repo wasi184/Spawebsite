@@ -199,8 +199,8 @@ function buildModalImage(service) {
 let imageSrc = '';
 
 if (service.id === 0) imageSrc = 'scard1.png';
-//if (service.id === 1) imageSrc = 'scard2.png';
-//if (service.id === 2) imageSrc = 'scard3.png';
+if (service.id === 1) imageSrc = 'scard2.png';
+if (service.id === 2) imageSrc = 'scard3.png';
 
 if (imageSrc) {
   const image = document.createElement('img');
