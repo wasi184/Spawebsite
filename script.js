@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initChatWidget();
   initBackToTop();
   initStatCounters();
+  initNavSpy();
   initCardTilt();
   initParallaxOrbs();
   initMagneticButtons();
