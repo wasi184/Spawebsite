@@ -1,14 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Now</title>
-  <link rel="stylesheet" href="book_now.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your premium spa session at Dhaka Serenity Spa. Choose your treatment, time, and location.">
+  <title>Book Now – Dhaka Serenity Spa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="book_now.css" />
 </head>
 <body>
-    <input placeholder="Name">
-    <input placeholder="Email">
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-inner">
+      <div class="loader-ring">
+        <svg class="loader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="36" stroke="#B48A4E" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="28" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="4 4"/>
+          <path d="M40 18 C28 18 20 28 20 40 C20 52 28 62 40 62 C52 62 60 52 60 40 C60 28 52 18 40 18Z" stroke="#B48A4E" stroke-width="1"/>
+          <circle cx="40" cy="40" r="6" fill="#B48A4E"/>
+          <line x1="40" y1="14" x2="40" y2="22" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="40" y1="58" x2="40" y2="66" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="14" y1="40" x2="22" y2="40" stroke="#B48A4E" stroke-width="1.5"/>
+          <line x1="58" y1="40" x2="66" y2="40" stroke="#B48A4E" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <p class="loader-text">Dhaka Serenity Spa</p>
+      <p class="loader-subtext">Preparing your booking…</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Dhaka Serenity Spa Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+            <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.6" stroke-dasharray="3 3"/>
+            <path d="M28 12 C20 12 14 19 14 28 C14 37 20 44 28 44 C36 44 42 37 42 28 C42 19 36 12 28 12Z" fill="#F3EBE1"/>
+            <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.3"/>
+            <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            <circle cx="20" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="36" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="20" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+            <circle cx="36" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Dhaka Serenity</span>
+          <span class="logo-sub">Spa</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <span class="nav-pill-highlight" id="nav-pill"></span>
+        <a href="index.html#hero" class="nav-link" data-nav>Home</a>
+        <a href="services.html"   class="nav-link" data-nav>Services</a>
+        <a href="about.html"      class="nav-link" data-nav>About</a>
+        <a href="index.html#location" class="nav-link" data-nav>Locations</a>
+      </nav>
+
+      <a href="book_now.html" class="btn btn-dark nav-cta">
+        <span>Book Now</span>
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="index.html#hero"      class="mobile-link">Home</a>
+      <a href="services.html"        class="mobile-link">Services</a>
+      <a href="about.html"           class="mobile-link">About</a>
+      <a href="index.html#location"  class="mobile-link">Locations</a>
+      <a href="book_now.html"        class="btn btn-dark mobile-cta">Book Now</a>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="bn-hero" id="bn-hero">
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+    <div class="bn-hero-inner">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot" id="badge-dot"></span>
+        <span class="badge-text">RESERVE YOUR EXPERIENCE</span>
+      </div>
+
+      <h1 class="bn-hero-h1 reveal-up" style="--delay:0.1s">
+        Book Your<br>
+        <span class="hero-h1-gradient">Spa Experience</span>
+      </h1>
+
+      <p class="bn-hero-sub reveal-up" style="--delay:0.2s">
+        Choose your treatment, select your time, and let us craft a session tailored exclusively for you. Pure luxury, just a few taps away.
+      </p>
+
+      <div class="bn-hero-scroll reveal-up" style="--delay:0.3s">
+        <span>Scroll to book</span>
+        <div class="scroll-arrow-wrap">
+          <i class="fa-solid fa-arrow-down"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MAIN BOOKING SECTION
+  ============================================================ -->
+  <section class="bn-section" id="booking-form-section">
+    <div class="bn-container">
+
+      <div class="bn-section-head center-text reveal-up">
+        <span class="section-tag">● BEGIN YOUR JOURNEY</span>
+        <h2 class="section-title">Complete Your Booking</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Fill in your details and customise your session below.</p>
+      </div>
+
+      <div class="bn-form-wrap reveal-up" style="--delay:0.1s">
+
+        <!-- ── STEP 1: Personal Details ── -->
+        <div class="bn-step">
+          <div class="bn-step-label">
+            <span class="bn-step-num">01</span>
+            <span class="bn-step-title">Your Details</span>
+          </div>
+          <div class="bn-fields-grid">
+            <div class="bn-field-wrap">
+              <label class="bn-label" for="inp-name">Full Name</label>
+              <div class="bn-input-box">
+                <i class="fa-solid fa-user bn-input-icon"></i>
+                <input id="inp-name" class="bn-input" type="text" placeholder="e.g. Arman Hossain" autocomplete="name" />
+              </div>
+            </div>
+            <div class="bn-field-wrap">
+              <label class="bn-label" for="inp-phone">Phone Number</label>
+              <div class="bn-input-box">
+                <i class="fa-solid fa-phone bn-input-icon"></i>
+                <input id="inp-phone" class="bn-input" type="tel" placeholder="+880 17XX XXX XXX" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="bn-field-wrap">
+              <label class="bn-label" for="inp-email">Email Address</label>
+              <div class="bn-input-box">
+                <i class="fa-solid fa-envelope bn-input-icon"></i>
+                <input id="inp-email" class="bn-input" type="email" placeholder="you@example.com" autocomplete="email" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: Service ── -->
+        <div class="bn-step">
+          <div class="bn-step-label">
+            <span class="bn-step-num">02</span>
+            <span class="bn-step-title">Select Treatment</span>
+          </div>
+
+          <button class="bn-selector-btn ripple-btn" id="openServiceModal" type="button">
+            <i class="fa-solid fa-spa"></i>
+            <span id="serviceBtnLabel">Choose Your Treatment</span>
+            <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
+          </button>
+
+          <div class="bn-pills-row" id="selectedServicePills"></div>
+        </div>
+
+        <!-- ── STEP 3: Duration ── -->
+        <div class="bn-step">
+          <div class="bn-step-label">
+            <span class="bn-step-num">03</span>
+            <span class="bn-step-title">Session Duration</span>
+          </div>
+
+          <button class="bn-selector-btn ripple-btn" id="openDurationModal" type="button">
+            <i class="fa-solid fa-clock"></i>
+            <span id="durationBtnLabel">Choose Duration & Price</span>
+            <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
+          </button>
+
+          <div class="bn-selection-display" id="durationDisplay"></div>
+        </div>
+
+        <!-- ── STEP 4: Day ── -->
+        <div class="bn-step">
+          <div class="bn-step-label">
+            <span class="bn-step-num">04</span>
+            <span class="bn-step-title">Preferred Day</span>
+          </div>
+
+          <button class="bn-selector-btn ripple-btn" id="openDayModal" type="button">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span id="dayBtnLabel">Choose Your Day</span>
+            <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
+          </button>
+
+          <div class="bn-selection-display" id="dayDisplay"></div>
+        </div>
+
+        <!-- ── STEP 5: Time ── -->
+        <div class="bn-step">
+          <div class="bn-step-label">
+            <span class="bn-step-num">05</span>
+            <span class="bn-step-title">Preferred Time</span>
+          </div>
+
+          <button class="bn-selector-btn ripple-btn" id="openTimeModal" type="button">
+            <i class="fa-regular fa-clock"></i>
+            <span id="timeBtnLabel">Choose Your Time Slot</span>
+            <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
+          </button>
+
+          <div class="bn-selection-display" id="timeDisplay"></div>
+        </div>
+
+        <!-- ── STEP 6: Location ── -->
+        <div class="bn-step">
+          <div class="bn-step-label">
+            <span class="bn-step-num">06</span>
+            <span class="bn-step-title">Select Branch</span>
+          </div>
+
+          <div class="bn-loc-grid">
+            <button class="bn-loc-card ripple-btn" data-location="Gulshan-2" type="button">
+              <div class="bn-loc-icon-wrap">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <div class="bn-loc-info">
+                <span class="bn-loc-name">Gulshan-2</span>
+                <span class="bn-loc-addr">UCB Bank, Dhaka 1212</span>
+              </div>
+              <i class="fa-solid fa-circle-check bn-loc-check"></i>
+            </button>
+
+            <button class="bn-loc-card ripple-btn" data-location="Mirpur-1" type="button">
+              <div class="bn-loc-icon-wrap">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <div class="bn-loc-info">
+                <span class="bn-loc-name">Mirpur-1</span>
+                <span class="bn-loc-addr">Mukto Bangla Shopping Complex</span>
+              </div>
+              <i class="fa-solid fa-circle-check bn-loc-check"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── SUBMIT ── -->
+        <div class="bn-submit-wrap">
+          <button class="btn btn-dark btn-wide ripple-btn bn-submit-btn" id="submitBooking" type="button">
+            <span>Confirm Booking</span>
+            <i class="fa-solid fa-arrow-right btn-icon"></i>
+          </button>
+          <p class="bn-submit-note"><i class="fa-solid fa-lock"></i> Secure & private. No payment required now.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MODAL: SERVICES
+  ============================================================ -->
+  <div class="bn-modal-overlay" id="serviceModalOverlay" role="dialog" aria-modal="true" aria-label="Select Treatment">
+    <div class="bn-modal">
+      <div class="bn-modal-header">
+        <div>
+          <h3 class="bn-modal-title">Select Your Treatment</h3>
+          <p class="bn-modal-sub">You can select multiple services</p>
+        </div>
+        <button class="bn-modal-close" id="closeServiceModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="bn-modal-body">
+        <div class="bn-service-grid" id="serviceGrid">
+          <!-- JS-generated cards -->
+        </div>
+      </div>
+      <div class="bn-modal-footer">
+        <button class="btn btn-dark ripple-btn" id="confirmServices" type="button">
+          <span>Confirm Selection</span>
+          <i class="fa-solid fa-check btn-icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       MODAL: DURATION
+  ============================================================ -->
+  <div class="bn-modal-overlay" id="durationModalOverlay" role="dialog" aria-modal="true" aria-label="Select Duration">
+    <div class="bn-modal bn-modal-sm">
+      <div class="bn-modal-header">
+        <div>
+          <h3 class="bn-modal-title">Session Duration</h3>
+          <p class="bn-modal-sub">Choose the length of your session</p>
+        </div>
+        <button class="bn-modal-close" id="closeDurationModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="bn-modal-body">
+        <div class="bn-dur-list" id="durationList">
+          <!-- JS-generated -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       MODAL: DAY
+  ============================================================ -->
+  <div class="bn-modal-overlay" id="dayModalOverlay" role="dialog" aria-modal="true" aria-label="Select Day">
+    <div class="bn-modal bn-modal-sm">
+      <div class="bn-modal-header">
+        <div>
+          <h3 class="bn-modal-title">Preferred Day</h3>
+          <p class="bn-modal-sub">We're open every day of the week</p>
+        </div>
+        <button class="bn-modal-close" id="closeDayModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="bn-modal-body">
+        <div class="bn-chip-grid" id="dayGrid">
+          <!-- JS-generated -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       MODAL: TIME
+  ============================================================ -->
+  <div class="bn-modal-overlay" id="timeModalOverlay" role="dialog" aria-modal="true" aria-label="Select Time">
+    <div class="bn-modal bn-modal-sm">
+      <div class="bn-modal-header">
+        <div>
+          <h3 class="bn-modal-title">Time Slot</h3>
+          <p class="bn-modal-sub">Available from 11 AM to 9 PM</p>
+        </div>
+        <button class="bn-modal-close" id="closeTimeModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="bn-modal-body">
+        <div class="bn-chip-grid" id="timeGrid">
+          <!-- JS-generated -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       RECEIPT MODAL
+  ============================================================ -->
+  <div class="bn-modal-overlay" id="receiptModalOverlay" role="dialog" aria-modal="true" aria-label="Booking Receipt">
+    <div class="bn-modal bn-modal-receipt">
+      <div class="bn-receipt-card" id="receiptCard">
+        <!-- JS-generated -->
+      </div>
+      <div class="bn-modal-footer">
+        <button class="btn btn-outline ripple-btn" id="closeReceiptModal" type="button">
+          <span>Edit Booking</span>
+          <i class="fa-solid fa-pen btn-icon"></i>
+        </button>
+        <a href="https://wa.me/8801660139118" class="btn btn-dark ripple-btn" target="_blank">
+          <span>Send via WhatsApp</span>
+          <i class="fa-brands fa-whatsapp btn-icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo-svg">
+              <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+              <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.4"/>
+              <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            </svg>
+            <span class="footer-brand-name">Dhaka Serenity Spa</span>
+          </div>
+          <p class="footer-brand-desc">Dhaka's elite spa sanctuary — where skilled hands, pure ingredients, and private spaces converge for your total transformation.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">QUICK LINKS</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#hero"  class="footer-link">Home</a></li>
+            <li><a href="services.html"    class="footer-link">Our Services</a></li>
+            <li><a href="about.html"       class="footer-link">About Us</a></li>
+            <li><a href="book_now.html"    class="footer-link">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">OUR SERVICES</h5>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Aroma Oil Massage</a></li>
+            <li><a href="services.html" class="footer-link">Deep Tissue Massage</a></li>
+            <li><a href="services.html" class="footer-link">Full Body Massage</a></li>
+            <li><a href="services.html" class="footer-link">Four Hand Massage</a></li>
+            <li><a href="services.html" class="footer-link">Thai Massage</a></li>
+            <li><a href="services.html" class="footer-link">Nuru Massage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">CONTACT US</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Mirpur 1, Mukto Bangla Shopping Complex</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1216, Bangladesh</li>
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Gulshan-2, UCB Bank</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1212, Bangladesh</li>
+            <li><i class="fa-solid fa-phone fc-icon"></i> +8801660139118</li>
+            <li><i class="fa-solid fa-envelope fc-icon"></i>
+              <a href="mailto:dhakaserenityspa43@gmail.com" class="footer-link footer-email">dhakaserenityspa43@gmail.com</a>
+            </li>
+            <li><i class="fa-regular fa-clock fc-icon"></i> Sat – Fri · 11 AM – 9 PM</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-sub">
+        <span class="footer-copy">© 2026 Dhaka Serenity Spa. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- CHAT WIDGET -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-stack" id="chatStack">
+      <a href="tel:+8801660139118" class="chat-token chat-call" title="Call Now" aria-label="Call us directly">
+        <i class="fa-solid fa-phone-volume"></i>
+      </a>
+      <a href="https://wa.me/8801660139118" class="chat-token chat-whatsapp" title="WhatsApp" aria-label="Chat on WhatsApp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+    <div class="chat-pill" id="chatPill" role="button" tabindex="0" aria-expanded="false" aria-label="Open contact options">
+      <span class="chat-pill-text">Let's Talk</span>
+      <div class="chat-pill-avatar">
+        <i class="fa-solid fa-comment-dots chat-avatar-icon"></i>
+      </div>
+    </div>
+    <div class="chat-close" id="chatClose" role="button" tabindex="0" aria-label="Close contact menu">
+      <i class="fa-solid fa-xmark chat-x"></i>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
   <script src="book_now.js"></script>
 </body>
 </html>
