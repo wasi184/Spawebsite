@@ -222,6 +222,10 @@
   background: linear-gradient(90deg, transparent, var(--color-cream-3), transparent);
 }
 
+.service-card {
+    scroll-margin-top: 86px;
+}
+
 /* 3-column grid for 12 cards */
 .svc-cards-grid {
   display: grid;
