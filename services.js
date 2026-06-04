@@ -193,15 +193,22 @@ function buildModalImage(service) {
   img.className = `svc-modal-img ${service.imgClass}`;
   img.style.position = 'relative';
 
-  // Clone the visual illustration from the card
-  const sourceVisual = document.querySelector(`.${service.visualClass}`);
-  img.innerHTML = '';
+  // New changes for the image for vertcal alignment
+   img.innerHTML = '';
 
-  if (sourceVisual) {
-    const clone = sourceVisual.cloneNode(true);
-    clone.style.cssText = 'position:absolute;inset:0;pointer-events:none;';
-    img.appendChild(clone);
-  }
+let imageSrc = '';
+
+if (service.id === 0) imageSrc = 'scard1.png';
+//if (service.id === 1) imageSrc = 'scard2.png';
+//if (service.id === 2) imageSrc = 'scard3.png';
+
+if (imageSrc) {
+  const image = document.createElement('img');
+  image.src = imageSrc;
+  image.className = 'modal-real-img';
+  img.appendChild(image);
+}
+ 
 
   // Overlay
   const overlay = document.createElement('div');
