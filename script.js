@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initChatWidget();
   initBackToTop();
   initStatCounters();
-  initNavSpy();
   initCardTilt();
   initParallaxOrbs();
   initMagneticButtons();
@@ -482,35 +481,6 @@ function initStatCounters() {
   );
 
   statNumbers.forEach(el => observer.observe(el));
-}
-
-
-/* ================================================================
-   12. NAV LINK SPY (Active State on Scroll)
-   Highlights the correct nav link based on visible section.
-   ================================================================ */
-function initNavSpy() {
-  const sections = document.querySelectorAll('section[id], footer[id]');
-  const navLinks = document.querySelectorAll('.nav-link[data-nav]');
-
-  if (!sections.length || !navLinks.length) return;
-
-  const setActive = (id) => {
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-    });
-  };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    },
-    { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' }
-  );
-
-  sections.forEach(section => observer.observe(section));
 }
 
 
