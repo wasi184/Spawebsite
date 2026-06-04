@@ -1948,7 +1948,7 @@ border-radius: inherit;
 .chat-token:hover { transform: scale(1.18); box-shadow: var(--shadow-xl); }
 
 .chat-call      { background: linear-gradient(145deg, var(--color-gold), var(--color-gold-dim)); }
-.chat-whatsapp  { background: linear-gradient(145deg, #25d366, #1da851); }
+.chat-whatsapp  { background: linear-gradient(145deg, var(--color-gold), var(--color-gold-dim)); }
 
 .chat-pill {
   display: flex;
