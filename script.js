@@ -60,7 +60,7 @@ function initLoader() {
   if (!loader) return;
 
   const MIN_TIME  = 1700;
-  const MAX_TIME  = 4000; // absolute fallback — never stuck longer than this
+  const MAX_TIME  = 4000;
   const startTime = Date.now();
 
   const hideLoader = () => {
@@ -69,26 +69,40 @@ function initLoader() {
 
     setTimeout(() => {
       loader.classList.add('hidden');
-      // Remove from DOM after CSS transition completes
-      loader.addEventListener('transitionend', () => loader.remove(), { once: true });
-      // Safety: remove even if transitionend never fires (e.g. CSS disabled)
-      setTimeout(() => { if (loader.parentNode) loader.remove(); }, 1200);
+      loader.addEventListener('transitionend', () => {
+        loader.remove();
+        scrollToHash();
+      }, { once: true });
+      setTimeout(() => {
+        if (loader.parentNode) loader.remove();
+        scrollToHash();
+      }, 1200);
     }, remaining);
   };
 
-  // Case (b): page already fully loaded before this script ran
   if (document.readyState === 'complete') {
     hideLoader();
     return;
   }
 
-  // Case (a): normal path — wait for all resources
   window.addEventListener('load', hideLoader, { once: true });
 
-  // Case (c): hard fallback in case 'load' never fires (e.g. blocked resource)
   setTimeout(() => {
     if (loader.parentNode) hideLoader();
   }, MAX_TIME);
+}
+
+function scrollToHash() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  const navbar = document.getElementById('navbar');
+  const offset = navbar ? navbar.offsetHeight : 86;
+  window.scrollTo({
+    top: target.getBoundingClientRect().top + window.scrollY - offset,
+    behavior: 'smooth'
+  });
 }
 
 
