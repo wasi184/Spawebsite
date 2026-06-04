@@ -1,13 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-  <link rel="stylesheet" href="about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dhaka Serenity Spa – Learn about our story, our values, and what makes us Dhaka's most elite wellness sanctuary.">
+  <title>About Us – Dhaka Serenity Spa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" />
 </head>
 <body>
-    <h1>Ekhane Amader about page</h1>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="index.html" class="nav-logo" aria-label="Dhaka Serenity Spa Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+            <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.6" stroke-dasharray="3 3"/>
+            <path d="M28 12 C20 12 14 19 14 28 C14 37 20 44 28 44 C36 44 42 37 42 28 C42 19 36 12 28 12Z" fill="#F3EBE1"/>
+            <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.3"/>
+            <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            <circle cx="20" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="36" cy="18" r="2" fill="#B48A4E" opacity="0.5"/>
+            <circle cx="20" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+            <circle cx="36" cy="38" r="1.5" fill="#B48A4E" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Dhaka Serenity</span>
+          <span class="logo-sub">Spa</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
+        <span class="nav-pill-highlight" id="nav-pill"></span>
+        <a href="index.html"         class="nav-link" data-nav>Home</a>
+        <a href="services.html"      class="nav-link" data-nav>Services</a>
+        <a href="about.html"         class="nav-link active" data-nav>About</a>
+        <a href="index.html#location" class="nav-link" data-nav>Locations</a>
+      </nav>
+
+      <a href="book_now.html" class="btn btn-dark nav-cta">
+        <span>Book Now</span>
+        <i class="fa-solid fa-arrow-right btn-icon"></i>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <a href="index.html"    class="mobile-link">Home</a>
+      <a href="services.html" class="mobile-link">Services</a>
+      <a href="about.html"    class="mobile-link">About</a>
+      <a href="book_now.html" class="btn btn-dark mobile-cta">Book Now</a>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       ABOUT HERO
+  ============================================================ -->
+  <section class="abt-hero" id="abt-hero">
+    <div class="abt-hero-orb abt-orb-1" aria-hidden="true"></div>
+    <div class="abt-hero-orb abt-orb-2" aria-hidden="true"></div>
+    <div class="abt-hero-orb abt-orb-3" aria-hidden="true"></div>
+
+    <div class="abt-hero-inner">
+
+      <div class="abt-hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        <span class="badge-text">OUR STORY</span>
+      </div>
+
+      <h1 class="abt-hero-h1 reveal-up" style="--delay:0.1s">
+        About<br>
+        <span class="hero-h1-gradient">Dhaka Serenity Spa</span>
+      </h1>
+
+      <div class="svc-hero-divider reveal-up" style="--delay:0.18s">
+        <div class="svc-divider-line svc-divider-left"></div>
+        <div class="svc-divider-gem">
+          <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="#B48A4E"/>
+          </svg>
+        </div>
+        <div class="svc-divider-line svc-divider-right"></div>
+      </div>
+
+      <p class="abt-hero-sub reveal-up" style="--delay:0.25s">
+        A sanctuary where ancient wellness traditions meet modern luxury — thoughtfully crafted for those who seek true restoration in the heart of Dhaka.
+      </p>
+
+      <div class="abt-hero-pills reveal-up" style="--delay:0.32s">
+        <span class="svc-hero-pill"><i class="fa-solid fa-award"></i> Est. 2020</span>
+        <span class="svc-hero-pill"><i class="fa-solid fa-spa"></i> 12 Treatments</span>
+        <span class="svc-hero-pill"><i class="fa-solid fa-location-dot"></i> 2 Locations</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT STORY SECTION
+  ============================================================ -->
+  <section class="abt-story-section" id="abt-story">
+    <div class="section-container">
+
+      <div class="abt-story-inner">
+
+        <div class="abt-story-label reveal-up">
+          <span class="section-tag">● OUR PHILOSOPHY</span>
+        </div>
+
+        <h2 class="abt-story-title reveal-up" style="--delay:0.08s">
+          Crafted with Intention.<br>Rooted in Serenity.
+        </h2>
+
+        <div class="abt-story-gold-line reveal-up" style="--delay:0.14s"></div>
+
+        <p class="abt-story-p reveal-up" style="--delay:0.18s">
+          Dhaka Serenity Spa was born from a singular vision — to create a refuge where the relentless pace of city life dissolves the moment you step through our doors. Founded in 2020, our sanctuary was conceived as a response to the growing demand for genuine, unhurried wellness in Dhaka's most vibrant neighbourhoods.
+        </p>
+
+        <p class="abt-story-p reveal-up" style="--delay:0.24s">
+          Every detail — from the amber warmth of our treatment suites to the hand-selected essential oils that scent our air — has been curated to envelop you in absolute calm. Our therapists are trained in a blend of traditional South and Southeast Asian bodywork techniques alongside contemporary therapeutic modalities, ensuring each session is both culturally rooted and clinically effective.
+        </p>
+
+        <p class="abt-story-p reveal-up" style="--delay:0.30s">
+          We believe luxury is not defined by excess, but by the precision of care. At Dhaka Serenity, every guest is welcomed as a cherished individual, never a number. Whether you arrive seeking relief from chronic tension, a moment of pure indulgence, or a ritual of self-restoration — our team is devoted to delivering an experience that exceeds every expectation.
+        </p>
+
+        <div class="abt-story-pillars reveal-up" style="--delay:0.36s">
+          <div class="abt-pillar">
+            <i class="fa-solid fa-leaf abt-pillar-icon"></i>
+            <span class="abt-pillar-label">Pure Ingredients</span>
+          </div>
+          <div class="abt-pillar-sep"></div>
+          <div class="abt-pillar">
+            <i class="fa-solid fa-hands abt-pillar-icon"></i>
+            <span class="abt-pillar-label">Expert Therapists</span>
+          </div>
+          <div class="abt-pillar-sep"></div>
+          <div class="abt-pillar">
+            <i class="fa-solid fa-door-closed abt-pillar-icon"></i>
+            <span class="abt-pillar-label">Private Suites</span>
+          </div>
+          <div class="abt-pillar-sep"></div>
+          <div class="abt-pillar">
+            <i class="fa-solid fa-heart abt-pillar-icon"></i>
+            <span class="abt-pillar-label">Total Care</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REVIEWS SECTION
+  ============================================================ -->
+  <section class="abt-reviews-section" id="abt-reviews">
+    <div class="section-container">
+
+      <div class="section-header center-text">
+        <span class="section-tag reveal-up">● GUEST EXPERIENCES</span>
+        <h2 class="section-title reveal-up" style="--delay:0.08s">Words from Our Guests</h2>
+        <div class="section-divider reveal-up" style="--delay:0.14s"></div>
+        <p class="section-subtitle reveal-up" style="--delay:0.2s">Every visit leaves a feeling that words barely capture — yet our guests try, beautifully.</p>
+      </div>
+
+      <div class="abt-reviews-grid">
+
+        <!-- Review 1 -->
+        <article class="abt-review-card reveal-up" style="--delay:0.05s">
+          <div class="abt-review-quote-mark" aria-hidden="true">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="abt-review-text">
+            The aroma oil massage completely melted away months of built-up tension. The suite was immaculate, the therapist's technique was exceptional, and the entire experience felt like a dream. I left feeling genuinely reborn — this is the finest spa I have visited anywhere in Dhaka.
+          </p>
+          <div class="abt-review-footer">
+            <div class="abt-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="abt-review-tag">Aroma Oil Massage</span>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="abt-review-card reveal-up" style="--delay:0.12s">
+          <div class="abt-review-quote-mark" aria-hidden="true">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="abt-review-text">
+            I booked the deep tissue session after weeks of back pain and it was transformative. The therapist was knowledgeable, the pressure was perfectly calibrated, and the serene ambience made the whole experience deeply restorative. I will absolutely be returning every month.
+          </p>
+          <div class="abt-review-footer">
+            <div class="abt-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="abt-review-tag">Deep Tissue Massage</span>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="abt-review-card reveal-up" style="--delay:0.19s">
+          <div class="abt-review-quote-mark" aria-hidden="true">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="abt-review-text">
+            Dhaka Serenity is in a league of its own. The attention to detail — the warm towels, the curated scents, the calm lighting — everything signalled true luxury before the treatment had even begun. The four-hand massage was an extraordinary, once-in-a-lifetime experience.
+          </p>
+          <div class="abt-review-footer">
+            <div class="abt-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="abt-review-tag">Four Hand Massage</span>
+          </div>
+        </article>
+
+        <!-- Review 4 -->
+        <article class="abt-review-card reveal-up" style="--delay:0.26s">
+          <div class="abt-review-quote-mark" aria-hidden="true">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <p class="abt-review-text">
+            From the moment I stepped inside, I knew this was different. The Thai massage was authentic, deeply skilled, and left my body feeling lighter than it has in years. The Gulshan location is beautiful, private, and discreet — exactly what a premium spa experience should be.
+          </p>
+          <div class="abt-review-footer">
+            <div class="abt-review-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="abt-review-tag">Thai Massage</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA SECTION
+  ============================================================ -->
+  <section class="svc-cta-section">
+    <div class="section-container">
+      <div class="svc-cta-banner reveal-up">
+        <div class="svc-cta-orb-1" aria-hidden="true"></div>
+        <div class="svc-cta-orb-2" aria-hidden="true"></div>
+        <div class="svc-cta-content">
+          <span class="section-tag svc-cta-tag">● BEGIN YOUR JOURNEY</span>
+          <h2 class="svc-cta-title">Your Sanctuary Awaits</h2>
+          <p class="svc-cta-sub">Step into Dhaka Serenity and let our expert therapists restore your mind, body, and spirit. Reserve your session today.</p>
+          <div class="svc-cta-btns">
+            <a href="book_now.html" class="btn btn-dark btn-wide ripple-btn">
+              <span>Reserve Your Session</span>
+              <i class="fa-solid fa-arrow-right btn-icon"></i>
+            </a>
+            <a href="services.html" class="btn btn-ghost-white btn-wide">
+              <span>View Our Services</span>
+              <i class="fa-solid fa-spa btn-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-logo-svg">
+              <circle cx="28" cy="28" r="26" stroke="#B48A4E" stroke-width="1.5"/>
+              <circle cx="28" cy="28" r="19" stroke="#B48A4E" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M22 24 Q28 18 34 24 Q38 30 34 36 Q28 42 22 36 Q18 30 22 24Z" fill="#B48A4E" opacity="0.4"/>
+              <circle cx="28" cy="28" r="5" fill="#B48A4E"/>
+            </svg>
+            <span class="footer-brand-name">Dhaka Serenity Spa</span>
+          </div>
+          <p class="footer-brand-desc">Dhaka's elite spa sanctuary — where skilled hands, pure ingredients, and private spaces converge for your total transformation.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">QUICK LINKS</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"    class="footer-link">Home</a></li>
+            <li><a href="services.html" class="footer-link">Our Services</a></li>
+            <li><a href="about.html"    class="footer-link">About Us</a></li>
+            <li><a href="book_now.html" class="footer-link">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">OUR SERVICES</h5>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Aroma Oil Massage</a></li>
+            <li><a href="services.html" class="footer-link">Deep Tissue Massage</a></li>
+            <li><a href="services.html" class="footer-link">Full Body Massage</a></li>
+            <li><a href="services.html" class="footer-link">Four Hand Massage</a></li>
+            <li><a href="services.html" class="footer-link">Thai Massage</a></li>
+            <li><a href="services.html" class="footer-link">Nuru Massage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-col-title">CONTACT US</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Mirpur 1, Mukto Bangla Shopping Complex</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1216, Bangladesh</li>
+            <li><i class="fa-solid fa-location-dot fc-icon"></i> Gulshan-2, UCB Bank</li>
+            <li><i class="fa-solid fa-location-dot fc-icon" style="opacity:0"></i> Dhaka 1212, Bangladesh</li>
+            <li><i class="fa-solid fa-phone fc-icon"></i> +8801660139118</li>
+            <li><i class="fa-solid fa-envelope fc-icon"></i>
+              <a href="mailto:dhakaserenityspa43@gmail.com" class="footer-link footer-email">dhakaserenityspa43@gmail.com</a>
+            </li>
+            <li><i class="fa-regular fa-clock fc-icon"></i> Sat – Fri · 11 AM – 9 PM</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-divider"></div>
+      <div class="footer-sub">
+        <span class="footer-copy">© 2026 Dhaka Serenity Spa. All rights reserved.</span>
+        <a href="#" class="footer-link footer-privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       CHAT WIDGET
+  ============================================================ -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-stack" id="chatStack">
+      <a href="tel:+8801660139118" class="chat-token chat-call" title="Call Now" aria-label="Call us directly">
+        <i class="fa-solid fa-phone-volume"></i>
+      </a>
+      <a href="https://wa.me/8801660139118" class="chat-token chat-whatsapp" title="WhatsApp" aria-label="Chat on WhatsApp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+    <div class="chat-pill" id="chatPill" role="button" tabindex="0" aria-expanded="false" aria-label="Open contact options">
+      <span class="chat-pill-text">Let's Talk</span>
+      <div class="chat-pill-avatar">
+        <i class="fa-solid fa-comment-dots chat-avatar-icon"></i>
+      </div>
+    </div>
+    <div class="chat-close" id="chatClose" role="button" tabindex="0" aria-label="Close contact menu">
+      <i class="fa-solid fa-xmark chat-x"></i>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
   <script src="about.js"></script>
 </body>
 </html>
