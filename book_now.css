@@ -848,6 +848,11 @@
 /* ================================================================
    RECEIPT
    ================================================================ */
+#closeReceiptModal{
+  background-color:white;
+  border-color:var(--color-dark);
+}
+
 .bn-receipt-card {
   background: var(--color-dark);
   border-radius: var(--radius-xl);
