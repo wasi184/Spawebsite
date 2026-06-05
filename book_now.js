@@ -12,6 +12,7 @@
  *  7.  Time Selector
  *  8.  Location Selector
  *  9.  Receipt Generator
+ *  9b. EmailJS — Send Booking Email
  *  10. Form Submit
  *  11. Validation
  * ================================================================
@@ -38,7 +39,7 @@ const SERVICES = [
 ];
 
 const DURATIONS = [
-  { id: 60,  label: '60 min',  sublabel: 'Standard Session',  price: 6000  },
+  { id: 60,  label: '60 min',  sublabel: 'Standard Session',   price: 6000  },
   { id: 90,  label: '90 min',  sublabel: 'Relaxation Session', price: 9000  },
   { id: 120, label: '120 min', sublabel: 'Premium Session',    price: 11000 },
 ];
@@ -103,8 +104,8 @@ function bindCloseBtn(btnId, overlayId) {
    4. SERVICE SELECTOR
    ================================================================ */
 function initServiceSelector() {
-  const grid   = document.getElementById('serviceGrid');
-  const openBtn = document.getElementById('openServiceModal');
+  const grid       = document.getElementById('serviceGrid');
+  const openBtn    = document.getElementById('openServiceModal');
   const confirmBtn = document.getElementById('confirmServices');
 
   if (!grid || !openBtn) return;
@@ -366,18 +367,18 @@ function initLocationSelector() {
    9. RECEIPT GENERATOR
    ================================================================ */
 function generateReceipt() {
-  const name     = document.getElementById('inp-name')?.value.trim()   || '—';
-  const phone    = document.getElementById('inp-phone')?.value.trim()  || '—';
-  const email    = document.getElementById('inp-email')?.value.trim()  || '—';
+  const name  = document.getElementById('inp-name')?.value.trim()  || '—';
+  const phone = document.getElementById('inp-phone')?.value.trim() || '—';
+  const email = document.getElementById('inp-email')?.value.trim() || '—';
 
   const serviceNames = state.selectedServices.map(
     id => SERVICES.find(s => s.id === id)?.name
   ).filter(Boolean);
 
-  const dur     = DURATIONS.find(d => d.id === state.duration);
-  const durLabel = dur ? dur.label : '—';
+  const dur       = DURATIONS.find(d => d.id === state.duration);
+  const durLabel  = dur ? dur.label : '—';
   const priceEach = dur ? dur.price : 0;
-  const total   = priceEach * (serviceNames.length || 1);
+  const total     = priceEach * (serviceNames.length || 1);
 
   const card = document.getElementById('receiptCard');
   if (!card) return;
@@ -487,6 +488,58 @@ function escHtml(str) {
 
 
 /* ================================================================
+   9b. EMAILJS — SEND BOOKING EMAIL
+   ================================================================ */
+function sendBookingEmail() {
+  const name  = document.getElementById('inp-name')?.value.trim()  || '—';
+  const phone = document.getElementById('inp-phone')?.value.trim() || '—';
+  const email = document.getElementById('inp-email')?.value.trim() || '—';
+
+  const serviceNames = state.selectedServices
+    .map(id => SERVICES.find(s => s.id === id)?.name)
+    .filter(Boolean);
+
+  const dur       = DURATIONS.find(d => d.id === state.duration);
+  const durLabel  = dur ? dur.label : '—';
+  const priceEach = dur ? dur.price : 0;
+  const total     = priceEach * (serviceNames.length || 1);
+
+  const templateParams = {
+    guest_name: name,
+    phone:      phone,
+    email:      email,
+    treatments: serviceNames.join(', ') || '—',
+    duration:   durLabel,
+    price:      total.toLocaleString() + ' TK',
+    day:        state.day      || '—',
+    time:       state.time     || '—',
+    branch:     state.location || '—',
+  };
+
+  // Show loading state on button
+  const btn = document.getElementById('submitBooking');
+  const originalHTML = btn.innerHTML;
+  btn.innerHTML = `<span>Sending…</span><i class="fa-solid fa-spinner fa-spin btn-icon"></i>`;
+  btn.disabled = true;
+
+  return emailjs.send(
+    'service_9e372vg',
+    'template_0lob9qm',
+    templateParams
+  )
+  .then(() => {
+    btn.innerHTML = originalHTML;
+    btn.disabled = false;
+  })
+  .catch((err) => {
+    console.error('EmailJS error:', err);
+    btn.innerHTML = originalHTML;
+    btn.disabled = false;
+  });
+}
+
+
+/* ================================================================
    10. FORM SUBMIT
    ================================================================ */
 function initSubmit() {
@@ -495,7 +548,7 @@ function initSubmit() {
 
   btn.addEventListener('click', () => {
     if (!validateForm()) return;
-    generateReceipt();
+    sendBookingEmail().then(() => generateReceipt());
   });
 
   bindCloseBtn('closeReceiptModal', 'receiptModalOverlay');
@@ -512,14 +565,14 @@ function validateForm() {
 
   const missing = [];
 
-  if (!name)                          missing.push('Full Name');
-  if (!phone)                         missing.push('Phone Number');
-  if (!email || !email.includes('@')) missing.push('Valid Email');
+  if (!name)                               missing.push('Full Name');
+  if (!phone)                              missing.push('Phone Number');
+  if (!email || !email.includes('@'))      missing.push('Valid Email');
   if (state.selectedServices.length === 0) missing.push('at least one Treatment');
-  if (!state.duration)                missing.push('Session Duration');
-  if (!state.day)                     missing.push('Preferred Day');
-  if (!state.time)                    missing.push('Time Slot');
-  if (!state.location)                missing.push('Branch Location');
+  if (!state.duration)                     missing.push('Session Duration');
+  if (!state.day)                          missing.push('Preferred Day');
+  if (!state.time)                         missing.push('Time Slot');
+  if (!state.location)                     missing.push('Branch Location');
 
   if (missing.length) {
     showValidationToast(missing);
