@@ -201,6 +201,15 @@ let imageSrc = '';
 if (service.id === 0) imageSrc = 'scard1.png';
 if (service.id === 1) imageSrc = 'scard2.png';
 if (service.id === 2) imageSrc = 'scard3.png';
+if (service.id === 3) imageSrc = 'scard4.png';
+if (service.id === 4) imageSrc = 'scard5.png';
+if (service.id === 5) imageSrc = 'scard6.png';
+if (service.id === 6) imageSrc = 'scard7.png';
+if (service.id === 7) imageSrc = 'scard8.png';
+if (service.id === 8) imageSrc = 'scard9.png';
+if (service.id === 9) imageSrc = 'scard10.png';
+if (service.id === 10) imageSrc = 'scard11.png';
+if (service.id === 11) imageSrc = 'scard12.png';
 
 if (imageSrc) {
   const image = document.createElement('img');
