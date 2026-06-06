@@ -249,6 +249,12 @@
   position: relative;
   overflow: hidden;
   height: 220px;
+  border-radius: inherit;
+}
+
+.card-img-wrap {
+  border-radius: var(--radius-lg);  /* same as card */
+  overflow: hidden;  /* CRITICAL */
 }
 
 .card-img-real {
@@ -257,10 +263,14 @@
   object-fit: cover;
   object-position: center;
   transition: transform 0.6s ease;
+    border-radius: inherit;  /* FIX */
+  display: block;  /*prevents inline gaps */
+}
 }
 
 .service-card:hover .card-img-real {
   transform: scale(1.08);
+  will-change: transform; /* smooth + prevents glitch */
 }
 
 
