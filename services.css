@@ -250,12 +250,17 @@
   object-fit: cover;
   object-position: center;
   display: block;
+   transition: transform 0.4s ease;
 }
 
 .card-img-wrap {
       position: relative;
      overflow: hidden;
      height: 220px;
+}
+
+.service-card:hover .card-img-wrap img {
+  transform: scale(1.08);
 }
 
 
