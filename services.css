@@ -257,6 +257,8 @@
       position: relative;
      overflow: hidden;
      height: 220px;
+   transform: translateZ(0);    /* forces GPU layer — kills corner flash */
+  border-radius: inherit; 
 }
 
 .service-card:hover .card-img-wrap img {
