@@ -259,6 +259,8 @@
      height: 220px;
    transform: translateZ(0);    /* forces GPU layer — kills corner flash */
   border-radius: inherit; 
+    border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .service-card:hover .card-img-wrap img {
