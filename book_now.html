@@ -106,146 +106,148 @@
 
   <!-- ============================================================
        MAIN BOOKING SECTION
-  ============================================================ -->
-  <section class="bn-section" id="booking-form-section">
-    <div class="bn-container">
-
-      <div class="bn-section-head center-text reveal-up">
-        <span class="section-tag">● BEGIN YOUR JOURNEY</span>
-        <h2 class="section-title">Complete Your Booking</h2>
-        <div class="section-divider"></div>
-        <p class="section-subtitle">Fill in your details and customise your session below.</p>
-      </div>
-
-      <div class="bn-form-wrap reveal-up" style="--delay:0.1s">
-
-        <!-- ── STEP 1: Personal Details ── -->
-        <div class="bn-step">
-          <div class="bn-step-label">
-            <span class="bn-step-num">01</span>
-            <span class="bn-step-title">Your Details</span>
-          </div>
-          <div class="bn-fields-grid">
-            <div class="bn-field-wrap">
-              <label class="bn-label" for="inp-name">Full Name</label>
-              <div class="bn-input-box">
-                <i class="fa-solid fa-user bn-input-icon"></i>
-                <input id="inp-name" class="bn-input" type="text" placeholder="e.g. Arman Hossain" autocomplete="name" />
-              </div>
+       ============================================================ -->
+       <section class="bn-section" id="booking-form-section">
+         <div class="bn-container">
+           
+           <div class="bn-section-head center-text reveal-up">
+             <span class="section-tag">● BEGIN YOUR JOURNEY</span>
+             <h2 class="section-title">Complete Your Booking</h2>
+             <div class="section-divider"></div>
+             <p class="section-subtitle">Fill in your details and customise your session below.</p>
             </div>
-            <div class="bn-field-wrap">
-              <label class="bn-label" for="inp-phone">Phone Number</label>
-              <div class="bn-input-box">
-                <i class="fa-solid fa-phone bn-input-icon"></i>
-                <input id="inp-phone" class="bn-input" type="tel" placeholder="+880 17XX XXX XXX" autocomplete="tel" />
+            
+            <div class="bn-form-wrap reveal-up" style="--delay:0.1s">
+              
+              <!-- ── STEP 1: Personal Details ── -->
+              <div class="bn-step">
+                <div class="bn-step-label">
+                  <span class="bn-step-num">01</span>
+                  <span class="bn-step-title">Select Branch</span>
+                </div>
+                
+                <div class="bn-loc-grid">
+                  <button class="bn-loc-card ripple-btn" data-location="Gulshan-2" type="button">
+                    <div class="bn-loc-icon-wrap">
+                      <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <div class="bn-loc-info">
+                      <span class="bn-loc-name">Gulshan-2</span>
+                      <span class="bn-loc-addr">UCB Bank, Dhaka 1212</span>
+                    </div>
+                    <i class="fa-solid fa-circle-check bn-loc-check"></i>
+                  </button>
+                  
+                  <button class="bn-loc-card ripple-btn" data-location="Mirpur-1" type="button">
+                    <div class="bn-loc-icon-wrap">
+                      <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <div class="bn-loc-info">
+                      <span class="bn-loc-name">Mirpur-1</span>
+                      <span class="bn-loc-addr">Mukto Bangla Shopping Complex</span>
+                    </div>
+                    <i class="fa-solid fa-circle-check bn-loc-check"></i>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="bn-field-wrap">
-              <label class="bn-label" for="inp-email">Email Address</label>
-              <div class="bn-input-box">
-                <i class="fa-solid fa-envelope bn-input-icon"></i>
-                <input id="inp-email" class="bn-input" type="email" placeholder="you@example.com" autocomplete="email" />
-              </div>
-            </div>
-          </div>
-        </div>
 
+            
+              <div class="bn-step">
+                <div class="bn-step-label">
+                  <span class="bn-step-num">02</span>
+                  <span class="bn-step-title">Your Details</span>
+                </div>
+                <div class="bn-fields-grid">
+                  <div class="bn-field-wrap">
+                    <label class="bn-label" for="inp-name">Full Name</label>
+                    <div class="bn-input-box">
+                      <i class="fa-solid fa-user bn-input-icon"></i>
+                      <input id="inp-name" class="bn-input" type="text" placeholder="e.g. Arman Hossain" autocomplete="name" />
+                    </div>
+                  </div>
+                  <div class="bn-field-wrap">
+                    <label class="bn-label" for="inp-phone">Phone Number</label>
+                    <div class="bn-input-box">
+                      <i class="fa-solid fa-phone bn-input-icon"></i>
+                      <input id="inp-phone" class="bn-input" type="tel" placeholder="+880 17XX XXX XXX" autocomplete="tel" />
+                    </div>
+                  </div>
+                  <div class="bn-field-wrap">
+                    <label class="bn-label" for="inp-email">Email Address</label>
+                    <div class="bn-input-box">
+                      <i class="fa-solid fa-envelope bn-input-icon"></i>
+                      <input id="inp-email" class="bn-input" type="email" placeholder="you@example.com" autocomplete="email" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
         <!-- ── STEP 2: Service ── -->
         <div class="bn-step">
           <div class="bn-step-label">
-            <span class="bn-step-num">02</span>
+            <span class="bn-step-num">03</span>
             <span class="bn-step-title">Select Treatment</span>
           </div>
-
+          
           <button class="bn-selector-btn ripple-btn" id="openServiceModal" type="button">
             <i class="fa-solid fa-spa"></i>
             <span id="serviceBtnLabel">Choose Your Treatment</span>
             <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
           </button>
-
+          
           <div class="bn-pills-row" id="selectedServicePills"></div>
         </div>
-
+        
         <!-- ── STEP 3: Duration ── -->
         <div class="bn-step">
           <div class="bn-step-label">
-            <span class="bn-step-num">03</span>
+            <span class="bn-step-num">04</span>
             <span class="bn-step-title">Session Duration</span>
           </div>
-
+          
           <button class="bn-selector-btn ripple-btn" id="openDurationModal" type="button">
             <i class="fa-solid fa-clock"></i>
             <span id="durationBtnLabel">Choose Duration & Price</span>
             <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
           </button>
-
+          
           <div class="bn-selection-display" id="durationDisplay"></div>
         </div>
-
+        
         <!-- ── STEP 4: Day ── -->
         <div class="bn-step">
           <div class="bn-step-label">
-            <span class="bn-step-num">04</span>
+            <span class="bn-step-num">05</span>
             <span class="bn-step-title">Preferred Day</span>
           </div>
-
+          
           <button class="bn-selector-btn ripple-btn" id="openDayModal" type="button">
             <i class="fa-solid fa-calendar-days"></i>
             <span id="dayBtnLabel">Choose Your Day</span>
             <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
           </button>
-
+          
           <div class="bn-selection-display" id="dayDisplay"></div>
         </div>
-
+        
         <!-- ── STEP 5: Time ── -->
         <div class="bn-step">
           <div class="bn-step-label">
-            <span class="bn-step-num">05</span>
+            <span class="bn-step-num">06</span>
             <span class="bn-step-title">Preferred Time</span>
           </div>
-
+          
           <button class="bn-selector-btn ripple-btn" id="openTimeModal" type="button">
             <i class="fa-regular fa-clock"></i>
             <span id="timeBtnLabel">Choose Your Time Slot</span>
             <i class="fa-solid fa-chevron-down bn-sel-chevron"></i>
           </button>
-
+          
           <div class="bn-selection-display" id="timeDisplay"></div>
         </div>
-
+        
         <!-- ── STEP 6: Location ── -->
-        <div class="bn-step">
-          <div class="bn-step-label">
-            <span class="bn-step-num">06</span>
-            <span class="bn-step-title">Select Branch</span>
-          </div>
-
-          <div class="bn-loc-grid">
-            <button class="bn-loc-card ripple-btn" data-location="Gulshan-2" type="button">
-              <div class="bn-loc-icon-wrap">
-                <i class="fa-solid fa-map-pin"></i>
-              </div>
-              <div class="bn-loc-info">
-                <span class="bn-loc-name">Gulshan-2</span>
-                <span class="bn-loc-addr">UCB Bank, Dhaka 1212</span>
-              </div>
-              <i class="fa-solid fa-circle-check bn-loc-check"></i>
-            </button>
-
-            <button class="bn-loc-card ripple-btn" data-location="Mirpur-1" type="button">
-              <div class="bn-loc-icon-wrap">
-                <i class="fa-solid fa-map-pin"></i>
-              </div>
-              <div class="bn-loc-info">
-                <span class="bn-loc-name">Mirpur-1</span>
-                <span class="bn-loc-addr">Mukto Bangla Shopping Complex</span>
-              </div>
-              <i class="fa-solid fa-circle-check bn-loc-check"></i>
-            </button>
-          </div>
-        </div>
-
+        
         <!-- ── SUBMIT ── -->
         <div class="bn-submit-wrap">
           <button class="btn btn-dark btn-wide ripple-btn bn-submit-btn" id="submitBooking" type="button">
@@ -254,14 +256,14 @@
           </button>
           <p class="bn-submit-note"><i class="fa-solid fa-lock"></i> Secure & private. No payment required now.</p>
         </div>
-
+        
       </div>
     </div>
   </section>
-
-
+  
+  
   <!-- ============================================================
-       MODAL: SERVICES
+  MODAL: SERVICES
   ============================================================ -->
   <div class="bn-modal-overlay" id="serviceModalOverlay" role="dialog" aria-modal="true" aria-label="Select Treatment">
     <div class="bn-modal">
