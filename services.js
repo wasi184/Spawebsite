@@ -244,14 +244,34 @@ function populateModal(serviceId) {
   setInner('svcModalPrice',    s.price);
   setInner('svcModalBenefit',  s.benefit);
 
-  // Price pills
-  const pricesEl = document.getElementById('svcModalPrices');
-  if (pricesEl) {
-    pricesEl.innerHTML = s.prices
-      .map(p => `<span class="svc-modal-price-pill">${p}</span>`)
-      .join('');
-  }
+  // Price pills - OLD DESIGN
+  //const pricesEl = document.getElementById('svcModalPrices');
+  //if (pricesEl) {
+   // pricesEl.innerHTML = s.prices
+   //   .map(p => `<span class="svc-modal-price-pill">${p}</span>`)
+   //   .join('');
+//  }
+//}
+
+// Price pills — location split
+const gulshanEl = document.getElementById('svcModalPricesGulshan');
+const mirpurEl  = document.getElementById('svcModalPricesMirpur');
+
+if (gulshanEl && mirpurEl) {
+
+  gulshanEl.innerHTML = [
+    '60 min – 6,000 Tk',
+    '90 min – 9,000 Tk',
+    '120 min – 11,000 Tk'
+  ].map(p => `<span class="svc-modal-price-pill">${p}</span>`).join('');
+
+  mirpurEl.innerHTML = [
+    '60 min – 6,500 Tk',
+    '90 min – 9,500 Tk',
+    '120 min – 11,500 Tk'
+  ].map(p => `<span class="svc-modal-price-pill">${p}</span>`).join('');
 }
+
 
 function openModal(serviceId) {
   const overlay = document.getElementById('svcModalOverlay');
