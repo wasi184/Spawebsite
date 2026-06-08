@@ -1310,3 +1310,33 @@
   background: var(--color-cream-3);
   border-radius: 4px;
 }
+
+/* === LOCATION BOXES (NEW) === */
+.svc-location-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.svc-location-box {
+  border: 2px solid rgba(180,138,78,0.6);
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(250,247,243,0.6);
+}
+
+.svc-location-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-bottom: 10px;
+}
+
+.svc-location-prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
