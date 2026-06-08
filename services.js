@@ -244,15 +244,6 @@ function populateModal(serviceId) {
   setInner('svcModalPrice',    s.price);
   setInner('svcModalBenefit',  s.benefit);
 
-  // Price pills - OLD DESIGN
-  //const pricesEl = document.getElementById('svcModalPrices');
-  //if (pricesEl) {
-   // pricesEl.innerHTML = s.prices
-   //   .map(p => `<span class="svc-modal-price-pill">${p}</span>`)
-   //   .join('');
-//  }
-//}
-
 // Price pills — location split
 const gulshanEl = document.getElementById('svcModalPricesGulshan');
 const mirpurEl  = document.getElementById('svcModalPricesMirpur');
@@ -271,7 +262,7 @@ if (gulshanEl && mirpurEl) {
     '120 min – 11,500 Tk'
   ].map(p => `<span class="svc-modal-price-pill">${p}</span>`).join('');
 }
-
+}
 
 function openModal(serviceId) {
   const overlay = document.getElementById('svcModalOverlay');
