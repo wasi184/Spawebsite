@@ -1494,8 +1494,8 @@ border-radius: inherit;
   align-items: center;
   text-align: center;
   gap: var(--sp-2);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0,0,0,0.15);
+   border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   transition:
     transform    0.4s var(--ease-expo),
     box-shadow   0.4s var(--ease-smooth),
