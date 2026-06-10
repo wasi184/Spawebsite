@@ -7,10 +7,28 @@
  *  2.  Modal System (open / close / keyboard / focus trap)
  *  3.  Card Click Binding
  *  4.  URL Param: auto-open service on load (?service=0)
- *  5.  Modal Image Injection (clones card illustration)
+ *  5.  Modal Image Injection
  *  6.  Staggered card entrance on load
- *  7.  Card tilt (extends initCardTilt from script.js)
- *  8.  Ripple effect (extends initRippleEffect from script.js)
+ *  7.  Hero parallax orbs
+ *  8.  Card hover tilt
+ *  9.  Ripple effect on modal buttons
+ * ================================================================
+ *
+ * PRICING TIERS
+ * ─────────────
+ * Premium  → Aroma Oil (id 0), Four Hand (id 3)
+ *            60 or 120 min only (no 90 min)
+ *
+ *            id 0 Gulshan: 60 min – 10,000 Tk | 120 min – 15,000 Tk
+ *            id 0 Mirpur : 60 min –  7,000 Tk | 120 min – 12,000 Tk
+ *
+ *            id 3 Gulshan: 60 min – 15,000 Tk | 120 min – 25,000 Tk
+ *            id 3 Mirpur : 60 min – 12,000 Tk | 120 min – 22,000 Tk
+ *
+ * Usual    → All other services (ids 1–2, 4–11)
+ *            Gulshan: 60 min – 8,000 | 90 min – 11,000 | 120 min – 13,000 Tk
+ *            Mirpur : 60 min – 7,000 | 90 min – 10,000 | 120 min – 12,000 Tk
+ *            (Mirpur is 1,000 Tk less than Gulshan for usual services)
  * ================================================================
  */
 
@@ -26,12 +44,10 @@ const SERVICES = [
     badge:    '✦ BESTSELLER',
     tag:      '● AROMATHERAPY',
     desc:     'Premium essential oils — chosen to match your mood and needs — are blended into long, flowing strokes that ease tension while their therapeutic scent calms the nervous system. Your skin drinks in nourishment as your mind exhales deeply, releasing the weight of everyday life.',
-    duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    duration: '60 or 120 min',
+    price:    '7,000 – 15,000 Tk',
     benefit:  '✦ Nourishes skin & calms nerves. Great for sleep improvement and deep relaxation.',
     imgClass: 'svc-img-aroma',
-    visualClass: 'svc-visual-aroma',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 1,
@@ -40,11 +56,9 @@ const SERVICES = [
     tag:      '● DEEP RELIEF',
     desc:     'Slow, deliberate strokes reach beneath the superficial muscles to break down adhesions and knots in the connective tissue. Designed for those carrying long-term muscular strain or recovering from physical overuse. Experience lasting relief you can feel for days.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Relieves chronic pain & stiffness. Best post-workout recovery and tension release.',
     imgClass: 'svc-img-deep',
-    visualClass: 'svc-visual-deep',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 2,
@@ -53,24 +67,20 @@ const SERVICES = [
     tag:      '● TOTAL WELLNESS',
     desc:     'A head-to-toe journey through every major muscle group, balancing relaxation strokes with therapeutic pressure to leave the whole body feeling unified and at ease. The definitive reset for a tired body and an overworked mind — the ultimate full-circle wellness experience.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Complete muscular renewal. Perfect full-body restoration and total mind-body harmony.',
     imgClass: 'svc-img-full',
-    visualClass: 'svc-visual-full',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 3,
     title:    'Four Hand Massage',
-    badge:    '✦ LUXURY DUO',
+    badge:    '✦ BESTSELLER',
     tag:      '● SYNCHRONIZED',
     desc:     'Two therapists move in perfect unison across your body, creating a seamless, almost meditative flow of touch. The mirrored movements trick the mind into deeper relaxation than a single therapist can achieve — a truly extraordinary and rare luxury wellness experience.',
-    duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    duration: '60 or 120 min',
+    price:    '12,000 – 25,000 Tk',
     benefit:  '✦ Deeply sedating. Ideal for anxiety & mental fatigue. Pure luxury relaxation.',
     imgClass: 'svc-img-fourhand',
-    visualClass: 'svc-visual-fourhand',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 4,
@@ -79,11 +89,9 @@ const SERVICES = [
     tag:      '● TRADITIONAL THAI',
     desc:     'Rooted in centuries of tradition, Thai massage combines passive yoga stretches, rhythmic compression, and acupressure along energy meridians to unlock stagnation, restore flexibility, and deliver a profound whole-body renewal. Performed fully clothed on a mat by a skilled therapist.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Improves flexibility & energy flow. Ideal for tension from long sitting or travel.',
     imgClass: 'svc-img-thai',
-    visualClass: 'svc-visual-thai',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 5,
@@ -92,11 +100,9 @@ const SERVICES = [
     tag:      '● FULL IMMERSION',
     desc:     'Originating in Japan, this full-body immersion technique uses a warm, ultra-slick nuru gel derived from seaweed. The frictionless gliding motions cover every muscle group for a profoundly deep release and skin-conditioning treatment that conventional massage simply cannot replicate.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Full-body tension release. Conditions skin deeply. Unique sensory experience.',
     imgClass: 'svc-img-nuru',
-    visualClass: 'svc-visual-nuru',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 6,
@@ -105,11 +111,9 @@ const SERVICES = [
     tag:      '● HEALING RITUAL',
     desc:     'Rooted in ancient healing traditions, this oil-free massage targets pressure points and applies deep rhythmic stretching to dissolve chronic tension — no oils, just skilled hands and focused technique. Perfect for those who prefer a drier, firmer therapeutic touch with lasting results.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Increases flexibility & blood flow. Best for office stress and chronic stiffness.',
     imgClass: 'svc-img-dry',
-    visualClass: 'svc-visual-dry',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 7,
@@ -118,11 +122,9 @@ const SERVICES = [
     tag:      '● AWAKEN THE SENSES',
     desc:     'A slow, exploratory full-body experience designed to heighten bodily awareness and dissolve inhibition. Gentle feather strokes and deliberate touch work together to awaken every nerve ending and restore the deep sensory connection between mind and body that modern life erodes.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Restores mind-body connection. Perfect for deep personal unwinding and presence.',
     imgClass: 'svc-img-sensual',
-    visualClass: 'svc-visual-sensual',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 8,
@@ -131,11 +133,9 @@ const SERVICES = [
     tag:      '● SKIN RENEWAL',
     desc:     'A dual-action treatment that exfoliates the entire body with a fine mineral scrub to reveal fresh, luminous skin — then pairs it with a targeted facial cleanse and deep hydration ritual, leaving face and body glowing in perfect unison. Ideal before any special event.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Removes dead skin & brightens complexion. Ideal pre-event radiance treatment.',
     imgClass: 'svc-img-scrub',
-    visualClass: 'svc-visual-scrub',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 9,
@@ -144,11 +144,9 @@ const SERVICES = [
     tag:      '● FOCUSED THERAPY',
     desc:     'A focused, high-impact session targeting the two areas that bear the most daily strain — the upper back and shoulder girdle. Therapists use firm kneading and cross-fiber friction to break up knots and restore range of motion fast. Perfect for desk workers and commuters.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Fast-acting knot relief. Perfect for desk workers, drivers & frequent travellers.',
     imgClass: 'svc-img-back',
-    visualClass: 'svc-visual-back',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 10,
@@ -157,11 +155,9 @@ const SERVICES = [
     tag:      '● TAILORED FOR YOU',
     desc:     'Your body, your rules. Our therapist consults with you before the session to build a fully bespoke treatment — drawing from our full range of techniques, pressures, and focus areas to match exactly what you need that day. No two sessions are ever alike.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Fully personalized to your body. No two sessions are ever the same.',
     imgClass: 'svc-img-special',
-    visualClass: 'svc-visual-special',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
   {
     id: 11,
@@ -170,13 +166,39 @@ const SERVICES = [
     tag:      '● ULTIMATE CONNECTION',
     desc:     'An immersive full-body experience that forges a profound connection between therapist and guest. Warm, all-encompassing contact dissolves every boundary of stress and tension, leaving you in a state of complete surrender to deep, whole-body relaxation unlike anything else.',
     duration: '60, 90, or 120 min',
-    price:    '6,000 – 11,000 Tk',
+    price:    '7,000 – 13,000 Tk',
     benefit:  '✦ Total full-body immersion. The most profound relaxation experience we offer.',
     imgClass: 'svc-img-b2b',
-    visualClass: 'svc-visual-b2b',
-    prices:   ['60 min – 6,000 Tk', '90 min – 9,000 Tk', '120 min – 11,000 Tk'],
   },
 ];
+
+/* ─── Pricing lookup ───────────────────────────────────────────── */
+
+/**
+ * Returns { gulshanPrices, mirpurPrices } for a given service id.
+ * Premium services (0, 3) have bespoke prices; all others share the
+ * usual tier.  Mirpur prices are computed by subtracting the tier
+ * discount from each Gulshan price.
+ */
+function getPricePills(serviceId) {
+  switch (serviceId) {
+    case 0: // Aroma Oil Massage — Premium (3,000 Tk discount for Mirpur)
+      return {
+        gulshan: ['60 min – 10,000 Tk', '120 min – 15,000 Tk'],
+        mirpur:  ['60 min – 7,000 Tk',  '120 min – 12,000 Tk'],
+      };
+    case 3: // Four Hand Massage — Premium (3,000 Tk discount for Mirpur)
+      return {
+        gulshan: ['60 min – 15,000 Tk', '120 min – 25,000 Tk'],
+        mirpur:  ['60 min – 12,000 Tk', '120 min – 22,000 Tk'],
+      };
+    default: // All usual services (1,000 Tk discount for Mirpur)
+      return {
+        gulshan: ['60 min – 8,000 Tk', '90 min – 11,000 Tk', '120 min – 13,000 Tk'],
+        mirpur:  ['60 min – 7,000 Tk', '90 min – 10,000 Tk', '120 min – 12,000 Tk'],
+      };
+  }
+}
 
 
 /* ================================================================
@@ -189,37 +211,17 @@ function buildModalImage(service) {
   const img = document.getElementById('svcModalImg');
   if (!img) return;
 
-  // Apply the same background class
   img.className = `svc-modal-img ${service.imgClass}`;
   img.style.position = 'relative';
+  img.innerHTML = '';
 
-  // New changes for the image for vertcal alignment
-   img.innerHTML = '';
-
-let imageSrc = '';
-
-if (service.id === 0) imageSrc = 'scard1.png';
-if (service.id === 1) imageSrc = 'scard2.png';
-if (service.id === 2) imageSrc = 'scard3.png';
-if (service.id === 3) imageSrc = 'scard4.png';
-if (service.id === 4) imageSrc = 'scard5.png';
-if (service.id === 5) imageSrc = 'scard6.png';
-if (service.id === 6) imageSrc = 'scard7.png';
-if (service.id === 7) imageSrc = 'scard8.png';
-if (service.id === 8) imageSrc = 'scard9.png';
-if (service.id === 9) imageSrc = 'scard10.png';
-if (service.id === 10) imageSrc = 'scard11.png';
-if (service.id === 11) imageSrc = 'scard12.png';
-
-if (imageSrc) {
+  // Map service id directly to its card image (id is 0-indexed)
+  const imageSrc = `scard${service.id + 1}.png`;
   const image = document.createElement('img');
   image.src = imageSrc;
   image.className = 'modal-real-img';
   img.appendChild(image);
-}
- 
 
-  // Overlay
   const overlay = document.createElement('div');
   overlay.className = 'card-img-overlay';
   img.appendChild(overlay);
@@ -244,24 +246,21 @@ function populateModal(serviceId) {
   setInner('svcModalPrice',    s.price);
   setInner('svcModalBenefit',  s.benefit);
 
-// Price pills — location split
-const gulshanEl = document.getElementById('svcModalPricesGulshan');
-const mirpurEl  = document.getElementById('svcModalPricesMirpur');
+  // Price pills — split by branch
+  const gulshanEl = document.getElementById('svcModalPricesGulshan');
+  const mirpurEl  = document.getElementById('svcModalPricesMirpur');
 
-if (gulshanEl && mirpurEl) {
+  if (gulshanEl && mirpurEl) {
+    const { gulshan, mirpur } = getPricePills(s.id);
 
-  gulshanEl.innerHTML = [
-    '60 min – 6,000 Tk',
-    '90 min – 9,000 Tk',
-    '120 min – 11,000 Tk'
-  ].map(p => `<span class="svc-modal-price-pill">${p}</span>`).join('');
+    gulshanEl.innerHTML = gulshan
+      .map(p => `<span class="svc-modal-price-pill">${p}</span>`)
+      .join('');
 
-  mirpurEl.innerHTML = [
-    '60 min – 6,500 Tk',
-    '90 min – 9,500 Tk',
-    '120 min – 11,500 Tk'
-  ].map(p => `<span class="svc-modal-price-pill">${p}</span>`).join('');
-}
+    mirpurEl.innerHTML = mirpur
+      .map(p => `<span class="svc-modal-price-pill">${p}</span>`)
+      .join('');
+  }
 }
 
 function openModal(serviceId) {
@@ -413,7 +412,6 @@ function initCardEntrance() {
   const cards = document.querySelectorAll('.svc-cards-grid .service-card');
   if (!cards.length) return;
 
-  // We extend the native scroll reveal — apply stagger via delay override
   cards.forEach((card, i) => {
     const row   = Math.floor(i / 3); // 3-col grid
     const col   = i % 3;
@@ -424,17 +422,7 @@ function initCardEntrance() {
 
 
 /* ================================================================
-   6. HERO BADGE DOT
-   ================================================================ */
-function initBadgeDot() {
-  const dot = document.getElementById('svc-badge-dot');
-  if (!dot) return;
-  // Already animated via CSS — no JS needed; presence confirms badge rendered.
-}
-
-
-/* ================================================================
-   7. HERO PARALLAX (mirror of initParallaxOrbs)
+   6. HERO PARALLAX
    ================================================================ */
 function initSvcHeroParallax() {
   const orbs = document.querySelectorAll('.svc-hero-orb');
@@ -471,7 +459,7 @@ function initSvcHeroParallax() {
 
 
 /* ================================================================
-   8. CARD HOVER TILT (scoped to services grid)
+   7. CARD HOVER TILT (scoped to services grid)
    ================================================================ */
 function initSvcCardTilt() {
   const cards = document.querySelectorAll('.svc-cards-grid .service-card');
@@ -506,12 +494,12 @@ function initSvcCardTilt() {
 
 
 /* ================================================================
-   9. RIPPLE ON MODAL BUTTONS
+   8. RIPPLE ON MODAL BUTTONS
    ================================================================ */
 function initSvcRipple() {
   document.querySelectorAll('.svc-modal .ripple-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const ripple    = document.createElement('span');
+      const ripple     = document.createElement('span');
       ripple.className = 'ripple';
       const rect = btn.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
@@ -529,34 +517,14 @@ function initSvcRipple() {
 
 
 /* ================================================================
-   10. FOOTER SERVICES LINKS — ensure they point to services.html
-   ================================================================ */
-function fixFooterServiceLinks() {
-  document.querySelectorAll('.footer-link').forEach(link => {
-    const href = link.getAttribute('href');
-    // If the link targets pricing.html but the text looks like a massage, redirect
-    if (href && href.includes('pricing.html')) {
-      const text = link.textContent.trim().toLowerCase();
-      const massageKeywords = ['massage', 'scrub', 'facial', 'thai', 'nuru', 'body'];
-      if (massageKeywords.some(kw => text.includes(kw))) {
-        link.setAttribute('href', 'services.html');
-      }
-    }
-  });
-}
-
-
-/* ================================================================
    INIT
    ================================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  initBadgeDot();
   initModal();
   initCardClicks();
   initCardEntrance();
   initSvcHeroParallax();
   initSvcCardTilt();
   initSvcRipple();
-  fixFooterServiceLinks();
   initUrlServiceParam();
 });
