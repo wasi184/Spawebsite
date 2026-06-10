@@ -1494,8 +1494,7 @@ border-radius: inherit;
   align-items: center;
   text-align: center;
   gap: var(--sp-2);
-   border: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.15);
   transition:
     transform    0.4s var(--ease-expo),
     box-shadow   0.4s var(--ease-smooth),
@@ -2249,30 +2248,22 @@ border-radius: inherit;
    ACCORDION — LOCATION GRID (NEW TWO-BOX DESIGN)
    ================================================================ */
 
-.acc-location-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 12px;
-}
+
 
 /* EACH BOX */
 .acc-loc-box {
-  display: flex;
-  align-items: center;
-  background: var(--color-cream-2);
-  border: 1.5px solid var(--color-gold);
-  border-radius: 50px;
-  padding: 10px 18px;
+  display:grid;
+  grid-template-columns: 100px 1fr;
+  width:fit-content;
+  background: rgba(250, 247, 243, 0.6);
+  border: 1px solid var(--color-gold);
+  border-radius: 30px;
+  margin-bottom:12px;
+  padding: 16px 18px;
 }
 
 /* LOCATION PILL */
-.acc-loc-pill {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding-right: 20px;
-}
+
 
 .acc-loc-icon {
   color: var(--color-gold);
@@ -2286,55 +2277,50 @@ border-radius: inherit;
   color: var(--color-gold-dim);
 }
 
-/* DIVIDER BETWEEN LOCATION & PRICES */
-.acc-loc-divider {
-  width: 1px;
-  min-height: 28px;
-  background: rgba(180,138,78,0.35);
-  margin-right: 20px;
-}
 
-/* PRICE ROW */
-.acc-prices {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
+
+
 
 /* PRICE TEXT */
+.acc-prices{
+  display:flex;
+  column-gap: 3px;
+  row-gap:10px;
+  flex-wrap:wrap;
+}
+
 .price-pill {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--color-gold-dim);
+    background: var(--color-gold-glow);
+    border: 1px solid rgba(180, 138, 78, 0.25);
+    border-radius: var(--radius-pill);
+    padding: 7px 16px;
+    font-family: var(--font-body);
+    color: var(--color-gold-dim);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
 }
 
-/* DIVIDER BETWEEN PRICES */
-.price-divider {
-  width: 1px;
-  height: 14px;
-  background: rgba(180,138,78,0.35);
-  margin: 0 12px;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 620px) {
-
+@media (max-width: 689px){
+  .price-pill{
+    width:80px;
+    border-radius: 15px;
+    padding: 5px 0px;
+  }
   .acc-loc-box {
-    border-radius: 20px;
-    align-items: flex-start;
+    border-radius: 25px;
   }
+}
 
-  .acc-loc-divider {
-    min-height: 52px;
+@media (max-width: 493px){
+  .acc-loc-box {
+    grid-template-columns: 100px 170px;
   }
+}
 
-  .acc-prices {
-    flex-wrap: wrap;
-    row-gap: 6px;
-  }
-
-  .acc-prices .price-divider:last-of-type {
-    display: none;
+@media (max-width: 400px){
+  .acc-loc-box {
+    grid-template-columns: 100px 80px;
   }
 }
 
