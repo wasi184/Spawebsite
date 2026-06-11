@@ -715,6 +715,10 @@
 
 
 /* ── DURATION LIST ── */
+#durationDisplay{
+  display:flex;
+  flex-wrap: wrap;
+}
 .bn-dur-list {
   display: flex;
   flex-direction: column;
