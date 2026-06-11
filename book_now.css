@@ -717,7 +717,7 @@
 /* ── DURATION LIST ── */
 #durationDisplay{
   display:flex;
-  flex-wrap: wrap;
+  flex-direction:column;
 }
 .bn-dur-list {
   display: flex;
@@ -1230,4 +1230,11 @@
     flex-direction: column;
     text-align: center;
   }
+}
+
+@media (min-width:696px){
+   #durationDisplay{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+   }
 }
