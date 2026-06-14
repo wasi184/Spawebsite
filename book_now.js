@@ -1008,6 +1008,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimeSelector();
   initLocationSelector();
   initSubmit();
+  initPromoCode();
 
   // Keyboard support: Escape closes any open modal
   document.addEventListener('keydown', (e) => {
@@ -1019,3 +1020,131 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+/* ================================================================
+   PROMO CODE SYSTEM
+   ================================================================ */
+
+function initPromoCode() {
+  const toggleBtn = document.getElementById('promoToggleBtn');
+  const content = document.getElementById('promoContent');
+  const chevron = document.getElementById('promoChevron');
+  const applyBtn = document.getElementById('applyPromoBtn');
+  const input = document.getElementById('promoInput');
+  const successBox = document.getElementById('promoSuccess');
+
+  if (!toggleBtn) return;
+  let promoApplied = false;
+
+  // TOGGLE
+  toggleBtn.addEventListener('click', () => {
+
+    //  IF PROMO ALREADY APPLIED
+    if (promoApplied) {
+
+      // toggle the WHOLE promo area instead
+      const isOpen = successBox.classList.contains('visible');
+
+      if (isOpen) {
+        successBox.classList.remove('visible');
+      } else {
+        successBox.classList.add('visible');
+      }
+
+      chevron.style.transform = successBox.classList.contains('visible')
+        ? 'rotate(180deg)'
+        : 'rotate(0deg)';
+
+      return;
+    }
+    //  NORMAL (BEFORE APPLY)
+    content.classList.toggle('open');
+
+    chevron.style.transform = content.classList.contains('open')
+      ? 'rotate(180deg)'
+      : 'rotate(0deg)';
+  });
+
+  applyBtn.addEventListener('click', () => {
+    const code = input.value.trim().toUpperCase();
+
+    if (!code) return;
+
+    //  CORRECT PROMO
+    if (code === 'SERENITY20') {
+      promoApplied = true;
+
+      successBox.classList.add('active');
+      successBox.classList.add('visible');
+
+      successBox.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:6px;width:100%;">
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <i class="fa-solid fa-circle-check" style="color:#2e7d32;"></i>
+          <span style="font-weight:700;">Promo code applied successfully!</span>
+        </div>
+
+        <div style="font-size:0.8rem;color:#2e7d32;">
+          You saved 20% on your booking.
+        </div>
+
+        <div style="
+          margin-top:8px;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          gap:10px;
+          background:#fff;
+          border-radius:10px;
+          padding:8px 12px;
+          border:1px solid rgba(0,0,0,0.05);
+        ">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <i class="fa-solid fa-tag"></i>
+            <span style="font-weight:600;">SERENITY20</span>
+          </div>
+
+          <button id="removePromo" style="
+            background:none;
+            border:none;
+            color:#2e7d32;
+            font-weight:600;
+            cursor:pointer;
+          ">Remove</button>
+        </div>
+
+      </div>
+
+      <div style="
+        margin-top:10px;
+        padding:10px;
+        border-radius:10px;
+        background:rgba(255,193,7,0.1);
+        color:#b48a4e;
+        font-size:0.8rem;
+      ">
+         Amazing! You're getting an exclusive discount.
+      </div>
+    `;
+      successBox.classList.add('visible');
+
+      content.classList.remove('open');
+
+      // REMOVE BUTTON
+      document.getElementById('removePromo').addEventListener('click', () => {
+        promoApplied = false;
+
+        successBox.classList.remove('active');
+        successBox.classList.remove('visible');
+
+        input.value = '';
+        content.classList.add('open');
+      });
+
+    } else {
+      alert('Invalid promo code');
+    }
+  });
+}
