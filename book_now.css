@@ -1363,24 +1363,19 @@
 
 /* SUCCESS STATE */
 .bn-promo-success {
-  margin-top: 12px;
-  padding: 14px;
-  border-radius: var(--radius-md);
-  background: rgba(46, 125, 50, 0.1);
-  border: 1.5px solid rgba(46, 125, 50, 0.4);
-  color: #2e7d32;
-  font-weight: 600;
-
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.35s ease;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    background: rgba(46, 125, 50, 0.1);
+    border: 1.5px solid rgba(46, 125, 50, 0.4);
+    color: #2e7d32;
+    font-weight: 600;
+    display: none;
 }
 
 /* WHEN EXPANDED */
 .bn-promo-success.visible {
-  max-height: 500px;
-  opacity: 1;
+    display: block;
 }
 
 .bn-promo-note {
